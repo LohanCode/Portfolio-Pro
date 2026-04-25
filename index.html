@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KC4ZVK35');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Lohan Poulain - BTS SIO SLAM</title>
+    <meta name="description" content="Découvrez mon parcours, mes projets et mes compétences en BTS SIO option SLAM.">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .quick-nav {
+            position: fixed;
+            right: 16px;
+            top: 94px;
+            z-index: 1200;
+            border-radius: 12px;
+            padding: 8px;
+            background: rgba(20, 22, 34, 0.84);
+            border: 1px solid rgba(0, 224, 255, 0.3);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+        }
+
+        .quick-nav h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.85rem;
+            color: #9eefff;
+            text-align: center;
+        }
+
+        .quick-nav .quick-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .quick-nav .quick-item {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 224, 255, 0.35);
+            background: rgba(0, 224, 255, 0.12);
+            color: #d8f7ff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #documentation,
+        #preuves,
+        #competences,
+        #veille {
+            scroll-margin-top: 18px;
+        }
+
+        @media (max-width: 1024px) {
+            .quick-nav {
+                right: 8px;
+                top: auto;
+                bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .quick-nav h4 {
+                margin: 0;
+            }
+
+            .quick-nav .quick-list {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC4ZVK35" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Orbes lumineux flottants pour effet immersif -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- Conteneur de particules -->
+    <div class="particles" id="particles"></div>
+    <header>
+        <h1 class="animated-title" data-text="Bienvenue sur mon Portfolio">Bienvenue sur mon Portfolio</h1>
+    </header>
+
+    <aside class="quick-nav" aria-label="Raccourcis oral">
+        <h4>Oral</h4>
+        <div class="quick-list">
+            <button type="button" class="quick-item" data-step="1" title="Etape 1">1</button>
+            <button type="button" class="quick-item" data-step="2" title="Etape 2">2</button>
+            <button type="button" class="quick-item" data-step="3" title="Etape 3">3</button>
+            <button type="button" class="quick-item" data-step="4" title="Etape 4">4</button>
+            <button type="button" class="quick-item" data-step="5" title="Etape 5 - Veille">5</button>
+        </div>
+    </aside>
+
+    <section id="accueil" class="hero-section">
+        <h1 class="animated-title">Bonjour, je suis Lohan Poulain</h1>
+        <p>Étudiant en BTS SIO à Lille au <a href="https://www.gastonberger.fr" class="school-link">Lycée Gaston
+                Berger</a>, passionné par l'informatique et par le Développement.</p>
+
+        <div
+            style="margin: 30px 0; padding: 25px; background: rgba(42, 42, 86, 0.3); border-radius: 12px; border: 1px solid rgba(0, 224, 255, 0.2);">
+            <h3 class="section-subtitle">Le BTS SIO : Deux spécialisations complémentaires</h3>
+            <div style="display: flex; gap: 20px; margin-bottom: 15px; justify-content: center;">
+                <div style="flex: 1; max-width: 300px; text-align: center; padding: 25px 20px; background: rgba(0, 224, 255, 0.1); border-radius: 15px; border: 3px solid #00e0ff; transition: transform 0.3s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.background='rgba(0, 224, 255, 0.2)'; this.style.boxShadow='0 8px 20px rgba(0, 224, 255, 0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(0, 224, 255, 0.1)'; this.style.boxShadow='none'">
+                    <h4 class="slam-title">SLAM</h4>
+                    <p style="margin: 0; font-size: 1rem; color: #ccc; line-height: 1.4;">Solutions Logicielles et
+                        Applications Métiers</p>
+                </div>
+                <div style="flex: 1; max-width: 300px; text-align: center; padding: 25px 20px; background: rgba(255, 165, 0, 0.1); border-radius: 15px; border: 3px solid #ffa500; transition: transform 0.3s ease; cursor: pointer;"
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.background='rgba(255, 165, 0, 0.2)'; this.style.boxShadow='0 8px 20px rgba(255, 165, 0, 0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(255, 165, 0, 0.1)'; this.style.boxShadow='none'">
+                    <h4 class="sisr-title">SISR</h4>
+                    <p style="margin: 0; font-size: 1rem; color: #ccc; line-height: 1.4;">Solutions d'Infrastructure,
+                        Systèmes et Réseaux</p>
+                </div>
+            </div>
+            <p
+                style="text-align: center; margin: 15px 0 0 0; padding: 12px; background: rgba(0, 224, 255, 0.1); border-radius: 8px; border: 1px solid rgba(0, 224, 255, 0.2); font-size: 0.95rem;">
+                <strong>Mon choix :</strong> SLAM - passionné par le développement et la création d'applications
+            </p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="#accueil" class="cta-button">Présentation perso</a>
+            <a href="#documentation" class="cta-button">Expérience</a>
+            <a href="#preuves" class="cta-button">Réalisations pro</a>
+            <a href="#competences" class="cta-button">Compétences</a>
+            <a href="#veille" class="cta-button">Veille</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Section Compétences Techniques -->
+        <section id="competences" class="container">
+            <nav class="section-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
+                <a href="#competences">Compétences</a>
+                <a href="#veille">Veille</a>
+            </nav>
+            <h2 class="animated-title">Mes Compétences Techniques</h2>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-title">👨‍💻 Langages de Programmation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title">🛠️ Frameworks & Bibliothèques</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Symfony</span>
+                        <span class="skill-tag">Twig</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title">🔧 Outils & Environnement</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VSCode</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title">🗄️ Base de Données</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">phpMyAdmin</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title">📝 Méthodologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Méthode Agile/Scrum</span>
+                        <span class="skill-tag">Tests Unitaires</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title">🔒 Sécurité</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTTPS/SSL</span>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Veille Technologique -->
+        <section id="veille" class="container">
+            <h2 class="section-title">💡 Veille Technologique</h2>
+            <nav class="section-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
+                <a href="#competences">Compétences</a>
+                <a href="#veille">Veille</a>
+            </nav>
+
+            <div class="veille-intro" style="margin-bottom: 40px;">
+                <h3>📚 Thème : Les bonnes pratiques du développement</h3>
+                <p>Ma veille technologique porte sur les bonnes pratiques dans le développement moderne.</p>
+            </div>
+
+            <h3 class="animated-title">📰 Quelques articles marquants</h3>
+            <div class="veille-article">
+                <h4>5 formations pour apprendre à coder</h4>
+                <p class="article-date">Source : BDM - 2 février 2026</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> Cet article montre que le métier de développeur ne se limite plus à la
+                        logique algorithmique.
+                        Les bonnes pratiques sont désormais intégrées en formation de développeurs. Cela montre
+                        également que pour un développeur,
+                        la qualité et la structure du code sont aussi importantes que sa fonctionnalité.</p>
+                    <p><strong>Mon avis :</strong> A travers ce comparatif de formations, je constate que les langages
+                        que nous étudions en BTS SLAM
+                        (Python, Java etc...) sont au coeur des besoins des entreprises en 2026. Cela valide ma démarche
+                        de veille : être un bon développeur aujourd'hui,
+                        ce n'est pas seulement 'faire fonctionner' un programme, c'est savoir l'organiser, le documenter
+                        et utiliser les bons outils.</p>
+                </div>
+                <div class="article-link" style="margin-top:8px;">
+                    <span style="font-size:0.95em; color:#00e0ff;">Source : </span>
+                    <a href="https://www.blogdumoderateur.com/selection-formation-code-288/" target="_blank"
+                        style="color:#00e0ff; text-decoration:underline;">https://www.blogdumoderateur.com/selection-formation-code-288/</a>
+                </div>
+            </div>
+            <div class="veille-article">
+                <h4>Du DevOPS à l'IA native : "Avec l'IA, les développeurs deviennent des managers d'agent"</h4>
+                <p class="article-date">Source : BDM - 1 Décembre 2025</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> Cet article vient de Patrick Debois qui est le créateur du mouvement
+                        DevOps.
+                        Il explique que l'IA ne remplace pas les bonnes pratiques mais au contraire, elle les rends
+                        obligatoires.
+                        C'est à dire : Si notre documentation est mauvaise, notre code pas modulaire ou bien nos
+                        variables mal nommées,
+                        l'IA va produire n'importe quoi. Il faut également, pour un employer d'avoir la compétence
+                        d'avoir la "revue de code"
+                        car oui, l'IA va pouvoir générer 50 fichiers d'un coup, mais il faut être capable de valider sa
+                        logique. Puis aussi, Debois
+                        imagine que la documentation doit être optimisée pour être par des IA.</p>
+                    <p><strong>Mon avis :</strong> Cet article change en effet ma perspective sur l'IA. J'ai compris que
+                        l'IA ne va pas supprimer le besoin de
+                        bonnes pratiques, mais au contraire punir ceux qui ne les respectent pas. Plus l'IA nous permet
+                        d'aller vite dans la génération de code, plus nous
+                        devons ête rigoureux sur nos tests et notre code pour garder le contrôle dessus.</p>
+                </div>
+                <div class="article-link" style="margin-top:8px;">
+                    <span style="font-size:0.95em; color:#00e0ff;">Source : </span>
+                    <a href="https://www.blogdumoderateur.com/devops-ia-native-developpeurs-managers-agents/"
+                        target="_blank"
+                        style="color:#00e0ff; text-decoration:underline;">https://www.blogdumoderateur.com/devops-ia-native-developpeurs-managers-agents/</a>
+                </div>
+            </div>
+            <div class="veille-article">
+                <h4>10 (new) ways Atlassian Intelligence helps your team work smarter</h4>
+                <p class="article-date">Source : Atlassian - 1 Mai 2024</p>
+                <div class="article-content">
+                    <p><strong>Résumé :</strong> Atlassian déploie une série de fonctionnalités basées sur l'IA pour
+                        optimiser la collaboration et la productivité
+                        des équipes de développement. L'objectif est de passer d'une gestion manuelle à un système où
+                        l'IA s'occupe de la structure
+                        et de la documentation. L'IA aide par exemple à rédiger des résumés de Pull Requests et des
+                        notes de mise à jour,
+                        elle réecrit également les descriptions de tickets pour qu'elles respectent des standards.
+                    </p>
+                    <p><strong>Mon avis :</strong> Cet article est très interessant car il montre que les outils que
+                        nous utiliserons en entreprise
+                        tels que Jira ou même Bitbucket intègrent désormais les bonnes pratiques. Ce qui est très bien
+                        aussi, c'est l'idée que l'IA ne remplace pas
+                        le développeur, mais lui enlève la charge des tâches administratives.</p>
+                </div>
+                <div class="article-link" style="margin-top:8px;">
+                    <span style="font-size:0.95em; color:#00e0ff;">Source : </span>
+                    <a href="https://www.atlassian.com/blog/confluence/team-24-ai-updates" target="_blank"
+                        style="color:#00e0ff; text-decoration:underline;">https://www.atlassian.com/blog/confluence/team-24-ai-updates</a>
+                </div>
+            </div>
+
+
+            <h3 class="animated-title">🏁 Conclusion de ma Veille</h3>
+            <div class="veille-conclusion">
+                <p>L'IA est désormais incontournable dans le développement moderne. Comme je l'ai vu avec les nouveautés
+                    d'Atlassian, des outils comme
+                    Github Copilot ou même Cursor en stage, ils ne remplacement pas les développeurs mais les rendent
+                    plus efficaces en automatisant les tâches (documentation, tests..).
+                    Cependant, la clé est de les utiliser inteligemment, comme le souligne <strong>Patrick
+                        Debois</strong>, le développeur devient un 'manageur d'agent'. Cela importe de
+                    garder un esprit critique sur le code généré et de renforcer les bonnes pratiques.
+                </p>
+                <p><strong>Mes outils de veille :</strong> Feedly (flux RSS), Google Alerts, GitHub Blog, Twitter/X.</p>
+            </div>
+
+            <!-- Preuves de veille : captures d'écran -->
+            <div class="veille-preuves" style="margin: 40px 0; text-align: center;">
+                <h4 style="color:#00e0ff; margin-bottom: 18px;">📸 Preuves de ma veille (Feedly & Google Alerts)</h4>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 40px;">
+                    <div style="width:100%; max-width:1000px; margin-bottom: 24px;">
+                        <img src="feedly.png" alt="Capture Feedly"
+                            style="width:100%; max-width:1000px; border-radius:16px; border:2.5px solid #00e0ff; box-shadow:0 4px 18px rgba(0,224,255,0.18); margin-bottom:12px;">
+                        <div style="font-size:1.05em; color:#00e0ff;">Flux RSS sur Feedly</div>
+                    </div>
+                    <div style="width:100%; max-width:1000px;">
+                        <img src="google_alert.png" alt="Capture Gmail Alerts"
+                            style="width:100%; max-width:1000px; border-radius:16px; border:2.5px solid #00e0ff; box-shadow:0 4px 18px rgba(0,224,255,0.18); margin-bottom:12px;">
+                        <img src="gmail.png" alt="Capture Google Alerts"
+                            style="width:100%; max-width:1000px; border-radius:16px; border:2.5px solid #00e0ff; box-shadow:0 4px 18px rgba(0,224,255,0.18); margin-bottom:12px;">
+                        <div style="font-size:1.05em; color:#00e0ff;">Google Alerts</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Documentation & Stage -->
+        <section id="documentation" class="container">
+            <h2 class="section-title">📁 Documentation & Stage</h2>
+            <nav class="section-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#documentation">Expérience</a>
+                <a href="#preuves">Réalisations</a>
+                <a href="#competences">Compétences</a>
+                <a href="#veille">Veille</a>
+            </nav>
+            <h2 class="animated-title" style="display: block; margin-bottom: 10px;">Mon expérience pro</h2>
+
+            <h3 class="animated-title" style="display: block; margin-top: 0;">1. CV</h3>
+            <h4>📄 Curriculum Vitae</h4>
+            <p>Consultez mon CV complet avec mon parcours, mes compétences et mes expériences.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 15px 0;">
+                <a href="CV_Lohan.pdf" target="_blank"
+                    style="flex: 1; min-width: 200px; max-width: 250px; padding: 15px 20px; background: linear-gradient(135deg, #4CAF50, #2E7D32); color: #fff; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);"
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(76, 175, 80, 0.4)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(76, 175, 80, 0.2)'">
+                    <span style="margin-right: 8px; font-size: 1.2rem;">👁️</span>
+                    Consulter mon CV
+                </a>
+                <a href="CV_Lohan.pdf" download="CV_Lohan_Poulain.pdf"
+                    style="flex: 1; min-width: 200px; max-width: 250px; padding: 15px 20px; background: linear-gradient(135deg, #00e0ff, #003366); color: #fff; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 224, 255, 0.2);"
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0, 224, 255, 0.4)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 224, 255, 0.2)'">
+                    <span style="margin-right: 8px; font-size: 1.2rem;">⬇️</span>
+                    Télécharger mon CV
+                </a>
+            </div>
+            <h3 class="animated-title" style="margin-top: 50px;">2. Mon parcours</h3>
+            <div class="parcours-timeline">
+                <div class="parcours-item">
+                    <h4>🎓 2024-2026 : BTS SIO option SLAM</h4>
+                    <p><strong>Lycée Gaston Berger, Lille</strong></p>
+                    <p>Formation en développement d'applications et solutions logicielles. Apprentissage des langages de
+                        programmation (HTML, CSS, PHP, JavaScript), bases de données, et méthodologies de développement.
+                    </p>
+                </div>
+
+                <div class="parcours-item">
+                    <h4>🏆 2024 : Baccalauréat</h4>
+                    <p><strong>Spécialité Système Numérique</strong></p>
+                    <p>Obtention du baccalauréat avec spécialisation en Système Numérique.</p>
+                </div>
+                <div class="parcours-timeline">
+                    <div class="parcours-item">
+                        <h4>🎓 2021-2024 : Bac professionnelle Système Numérique (Option C)</h4>
+                        <p><strong>Lycée Gustave Eiffel, Lille</strong></p>
+                        <p>Formation à la gestion des réseaux et systèmes informatiques (installation, configuration,
+                            maintenance et sécurisation des équipements). </p>
+                    </div>
+
+                </div>
+
+                <h2 class="section-title animated-title"><span>3.</span> Expérience Professionnelle</h2>
+
+                <!-- Système d'onglets pour les stages -->
+                <div class="stage-tabs-container">
+                    <div class="stage-tabs">
+                        <button id="tab-stage1" class="stage-tab active" onclick="showStage('stage1', this)">
+                            <span class="tab-icon">🏢</span>
+                            <span class="tab-text">Stage 1ère Année</span>
+                            <span class="tab-period">2025</span>
+                        </button>
+                        <button id="tab-stage2" class="stage-tab" onclick="showStage('stage2', this)">
+                            <span class="tab-icon">🚀</span>
+                            <span class="tab-text">Stage 2ème Année</span>
+                            <span class="tab-period">2026</span>
+                        </button>
+                    </div>
+
+                    <!-- Stage 1ère année - NACON -->
+                    <div id="stage1" class="stage-content active">
+                        <div class="stage-section">
+                            <div id="entreprise-stage1" class="company-presentation">
+                                <h3 class="company-name">NACON</h3>
+                                <h5>Contexte de l'entreprise</h5>
+                                <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une
+                                    entreprise
+                                    française créée en <strong>octobre 2019</strong>, issue de la restructuration de
+                                    <br><strong><a href="https://www.bigben.fr" class="school-link">Bigben
+                                            Interactive</a></strong>
+                                    afin de regrouper sous une même marque ses activités liées au jeu vidéo. Son siège
+                                    est basé
+                                    à <strong>Lesquin (Hauts-de-France).</strong>
+                                    Aujourd'hui, Nacon emploie plusieurs <strong>centaines de personnes</strong>, avec
+                                    une présence <strong>internationale</strong>. L'entreprise a réalisé un
+                                    chiffre d'affaires de <strong>167,9 millions d'euros en 2025.</strong>
+                                </p>
+                                <h5>Position sur le marché</h5>
+                                <p>Nacon occupe une place singulière dans l'industrie du <strong>gaming</strong>.
+                                    Contrairement
+                                    aux grands éditeurs "AAA", elle s'oriente
+                                    vers des productions dites <strong>AA</strong>, qui allient une qualité technique
+                                    solide et
+                                    des budgets plus raisonnables, permettant
+                                    de viser un public large. En parallèle, Nacon s'est imposée comme un acteur reconnu
+                                    dans le
+                                    secteur des <strong>accessoires
+                                        gaming</strong> premium notamment grâce à ses manettes, casques, volants et
+                                    périphériques spécialisés.</p>
+                                <h5>Marques et produits phares</h5>
+                                <p><strong>Accessoires</strong> : manettes Revolution Unlimited Pro Controller, Daija
+                                    Arcade
+                                    Stick, casque gaming, volants,
+                                    fauteuils de gamer...</p>
+                                <p><strong>Jeux vidéo</strong> : Pro Cycling Manager, Rugby 14, Tennis World Tour, Styx,
+                                    V-Rally, Paranoia, etc.</p>
+                                <p>Cette double activité (jeux + accessoires) fait de Nacon un acteur unique, capable
+                                    d'accompagner les joueurs à la fois
+                                    dans l'expérience logicielle et matérielle.</p>
+                                <h5>Organisation et méthode de travail</h5>
+                                <p>Nacon met en place des équipes <strong>pluridisciplinaires</strong> regroupant
+                                    développeurs
+                                    back-end et front-end, designers UX/UI, testeurs,
+                                    chefs de projet et tech leads. L'organisation du travail repose en grande partie sur
+                                    des
+                                    méthodes Agile, permettant de gérer
+                                    efficacement le cycle de développement des jeux et des plateformes numériques.
+                                </p>
+                                <h5>Mon rôle et mes missions lors du stage</h5>
+                                <p>Mon rôle dans l’équipe back-end de Nacon consistait à participer activement au
+                                    développement
+                                    et à la maintenance
+                                    d’un projet sous <strong>PHP Symfony</strong>. J’ai collaboré avec des développeurs
+                                    front-end, des UX/UI designers,
+                                    des chefs de projet, des testeurs et des tech leads. Mes missions incluaient
+                                    notamment la
+                                    réalisation de
+                                    <strong>tests unitaires</strong> et la gestion de tickets via l’outil de suivi.
+                                </p>
+                                <p>Cette expérience m’a permis de comprendre concrètement le fonctionnement d’un projet
+                                    en
+                                    environnement Agile
+                                    et de développer de nouvelles compétences techniques et organisationnelles.</p>
+
+
+
+
+
+                                <div class="stage-details-grid">
+                                    <div class="stage-detail-card">
+                                        <h5><span class="detail-icon">🎯</span> Compétences acquises</h5>
+                                        <ul>
+                                            <li>Développement web avec des nouveaux langages</li>
+                                            <li>Travail en équipe et méthodes agiles</li>
+                                            <li>Tests unitaires</li>
+                                            <li>Auto-Formation Git/Docker</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="stage-detail-card">
+                                        <h5><span class="detail-icon">📋</span> Missions réalisées</h5>
+                                        <ul>
+                                            <li>Configuration profil Github</li>
+                                            <li>Création projet PHP Symfony du début</li>
+                                            <li>Prise en charge d'un projet PHP Symfony Nacon</li>
+                                            <li>Correction de bug sur le projet Nacon</li>
+                                            <li>Mettre à jour des composer</li>
+                                            <li>Ticketing pour un customfiles en PHP sf</li>
+                                            <li>Mise en place du customfiles sous forme d'API</li>
+                                            <li>Se documenter sur les tests unitaires</li>
+                                            <li>Faire différents tests unitaires pour l'api</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2ème année - NACON -->
+                    <div id="stage2" class="stage-content">
+                        <div class="stage-section">
+                            <div id="entreprise-stage2" class="company-presentation">
+                                <h3 class="company-name">NACON</h3>
+                                <h5>Contexte de l'entreprise</h5>
+                                <p><a href="https://www.nacongaming.com" class="school-link">Nacon</a> est une
+                                    entreprise
+                                    française créée en <strong>octobre 2019</strong>, issue de la restructuration de
+                                    <br><strong><a href="https://www.bigben.fr" class="school-link">Bigben
+                                            Interactive</a></strong>
+                                    afin de regrouper sous une même marque ses activités liées au jeu vidéo. Son siège
+                                    est basé
+                                    à <strong>Lesquin (Hauts-de-France).</strong>
+                                    Aujourd'hui, Nacon emploie plus de <strong>1 000 collaborateurs</strong> et est
+                                    présente
+                                    dans plus de <strong>100 pays</strong>. L'entreprise a réalisé un
+                                    chiffre d'affaires de <strong>167,9 millions d'euros en 2025.</strong>
+                                </p>
+                                <h5>Position sur le marché</h5>
+                                <p>Nacon occupe une place singulière dans l'industrie du <strong>gaming</strong>.
+                                    Contrairement
+                                    aux grands éditeurs "AAA", elle s'oriente
+                                    vers des productions dites <strong>AA</strong>, qui allient une qualité technique
+                                    solide et
+                                    des budgets plus raisonnables, permettant
+                                    de viser un public large. En parallèle, Nacon s'est imposée comme un acteur reconnu
+                                    dans le
+                                    secteur des <strong>accessoires
+                                        gaming</strong> premium notamment grâce à ses manettes, casques, volants et
+                                    périphériques spécialisés.</p>
+                                <h5>Marques et produits phares</h5>
+                                <p><strong>Accessoires</strong> : manettes Revolution Unlimited Pro Controller, Daija
+                                    Arcade
+                                    Stick, casque gaming, volants,
+                                    fauteuils de gamer...</p>
+                                <p><strong>Jeux vidéo</strong> : Pro Cycling Manager, Rugby 14, Tennis World Tour, Styx,
+                                    V-Rally, Paranoia, etc.</p>
+                                <p>Cette double activité (jeux + accessoires) fait de Nacon un acteur unique, capable
+                                    d'accompagner les joueurs à la fois
+                                    dans l'expérience logicielle et matérielle.</p>
+                                <h5>Organisation et méthode de travail</h5>
+                                <p>Nacon met en place des équipes <strong>pluridisciplinaires</strong> regroupant
+                                    développeurs
+                                    back-end et front-end, designers UX/UI, testeurs,
+                                    chefs de projet et tech leads. L'organisation du travail repose en grande partie sur
+                                    des
+                                    méthodes Agile, permettant de gérer
+                                    efficacement le cycle de développement des jeux et des plateformes numériques.
+                                </p>
+                                <h5>Mon rôle et mes missions lors du stage</h5>
+                                <p>Mon rôle dans l’équipe back-end de Nacon consistait à participer activement au
+                                    développement et à la maintenance d’un projet sous PHP Symfony. J’ai collaboré avec
+                                    des développeurs front-end, des UX/UI designers, des chefs de projet, des testeurs
+                                    et des tech leads.
+                                    Mes missions incluaient notamment la réalisation de grosse Mise à jour Symfony et
+                                    EasyAdmin et le suivi des tests avec la réparation des erreurs à corriger.
+                                </p>
+
+                                <div class="stage-details-grid">
+                                    <div class="stage-detail-card">
+                                        <h5><span class="detail-icon">🎯</span> Compétences acquises</h5>
+                                        <ul>
+                                            <li>Mise à jour et maintenance d'applications Symfony existantes</li>
+                                            <li>Analyse et correction d'erreurs suite à des montées de versions</li>
+                                            <li>Tests fonctionnels et validation applicative</li>
+                                            <li>Intégration et exploitation d'API (Shoppingfeed)</li>
+                                            <li>Compréhension d'une base de code existante et amélioration</li>
+                                            <li>Lecture et exploitation de documentation technique (Wiki Bitbucket)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="stage-detail-card">
+                                        <h5><span class="detail-icon">📋</span> Missions réalisées</h5>
+                                        <ul>
+                                            <li>Mise à jour du framework Symfony et du Bundle EasyAdmin</li>
+                                            <li>Identification et correction des erreurs liées aux mises à jour</li>
+                                            <li>Réalisation de tests fonctionnels sur l'ensemble du site</li>
+                                            <li>Manipulation et exploitation de l'API Shoppingfeed</li>
+                                            <li>Amélioration de la fiabilité et des performances du site</li>
+                                            <li>Création de commandes Symfony via exécutables via le terminal</li>
+                                            <li>Consultation et application des consignes du Wiki Bitbucket</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function showStage(stageId, button) {
+                        document.querySelectorAll('.stage-content').forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.querySelectorAll('.stage-tab').forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        document.getElementById(stageId).classList.add('active');
+                        button.classList.add('active');
+                    }
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <section id="tableau" class="container">
+        <nav class="section-nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#documentation">Expérience</a>
+            <a href="#preuves">Réalisations</a>
+            <a href="#competences">Compétences</a>
+            <a href="#veille">Veille</a>
+        </nav>
+        <h2 class="animated-title">Tableau de Synthèse BTS SIO</h2>
+
+        <div class="tableau-intro">
+            <p>Voici mon tableau de synthèse des compétences acquises durant ma formation BTS SIO option SLAM. Ce
+                tableau recense l'ensemble des projets réalisés en cours et en stage, ainsi que les compétences
+                développées.</p>
+
+            <div class="tableau-download">
+                <h3>📄 Télécharger mon Tableau de Synthèse</h3>
+                <p>Le tableau complet au format Excel est disponible au téléchargement. Il contient :</p>
+                <ul>
+                    <li>La liste complète des réalisations que j'ai faites</li>
+                    <li>Les compétences et sous-compétences du référentiel BTS SIO</li>
+                </ul>
+
+                <div class="download-buttons">
+                    <a href="Tableau_competence_Lohan.xlsx" download class="download-btn excel">
+                        <span>📈</span> Télécharger le Tableau Excel
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proofs-section" id="preuves">
+            <h3 class="animated-title" style="margin-top: 50px;">📂 Preuves de Réalisations Professionnelles</h3>
+            <p style="text-align: center; color: #ccc; margin-bottom: 30px;">Accédez aux justificatifs de
+                mes réalisations en cours de formation et en stage.</p>
+
+            <div class="proofs-grid">
+                <a href="projets_cours.html" class="proof-card">
+                    <div class="proof-icon">🎓</div>
+                    <h4>Projets en Cours</h4>
+                    <p>Découvrez mes réalisations en cours de formation</p>
+                </a>
+
+                <a href="stage_1.html" class="proof-card">
+                    <div class="proof-icon">🏢</div>
+                    <h4>Stage 1ère Année</h4>
+                    <p>Preuves de mon premier stage en entreprise</p>
+                </a>
+
+                <a href="stage_2.html" class="proof-card">
+                    <div class="proof-icon">🏢</div>
+                    <h4>Stage 2ème Année</h4>
+                    <p>Preuves de mon deuxième stage en entreprise</p>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <nav class="section-nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#documentation">Expérience</a>
+            <a href="#preuves">Réalisations</a>
+            <a href="#competences">Portfolio</a>
+            <a href="#veille">Veille</a>
+        </nav>
+        <h2 class="animated-title">Me Contacter</h2>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>📨 Restons en contact</h3>
+                <p>N'hésitez pas à me contacter pour toute opportunité professionnelle, ou question sur mes projets.</p>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:lohan.poulain@etudiant.gastonberger.fr">lohanpou@yahoo.fr</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Localisation</h4>
+                            <p>Bailleul, Hauts-de-France</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">🎓</span>
+                        <div>
+                            <h4>Formation</h4>
+                            <p>BTS SIO SLAM - Lycée Gaston Berger</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h4>Réseaux professionnels</h4>
+                    <div class="social-buttons">
+                        <a href="https://www.linkedin.com/in/lohan-poulain-aa95bb328/" target="_blank"
+                            class="social-btn linkedin">
+                            <span>🔗</span> LinkedIn
+                        </a>
+                        <a href="https://github.com/LohanCode" target="_blank" class="social-btn github">
+                            <span>🐱</span> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="availability">
+                    <h4>🟢 Disponibilité</h4>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SLAM</p>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Génération des particules animées
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particle.style.animationDelay = particle.style.animationDelay;
+                particlesContainer.appendChild(particle);
+            }
+
+            // Reordonne les sections selon le fil oral: perso -> entreprise -> realisations -> portfolio -> veille/ouverture.
+            const main = document.querySelector('main');
+            const sectionDocumentation = document.getElementById('documentation');
+            const sectionTableau = document.getElementById('tableau');
+            const sectionCompetences = document.getElementById('competences');
+            const sectionVeille = document.getElementById('veille');
+
+            if (main && sectionDocumentation && sectionTableau && sectionCompetences && sectionVeille) {
+                main.insertBefore(sectionDocumentation, main.firstChild);
+                main.insertBefore(sectionTableau, sectionCompetences);
+                main.appendChild(sectionCompetences);
+                main.appendChild(sectionVeille);
+            }
+
+            if (window.location.hash) {
+                history.replaceState(null, null, ' ');
+                window.scrollTo(0, 0);
+            }
+
+            const stepActions = {
+                1: () => {
+                    scrollToTarget('accueil');
+                },
+                2: () => {
+                    openStageAndScroll('stage1', 'documentation');
+                },
+                3: () => {
+                    scrollToTarget('preuves');
+                },
+                4: () => {
+                    scrollToTarget('competences');
+                },
+                5: () => {
+                    scrollToTarget('veille');
+                }
+            };
+
+            function scrollToTarget(targetId) {
+                const target = document.getElementById(targetId);
+                if (!target) return;
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            function openStageAndScroll(stageId, targetId) {
+                const tabButton = document.getElementById(stageId === 'stage2' ? 'tab-stage2' : 'tab-stage1');
+                if (tabButton) {
+                    showStage(stageId, tabButton);
+                }
+                scrollToTarget('documentation');
+                window.setTimeout(() => {
+                    scrollToTarget(targetId);
+                }, 300);
+            }
+
+            document.querySelectorAll('[data-step]').forEach((element) => {
+                element.addEventListener('click', () => {
+                    const step = Number(element.getAttribute('data-step'));
+                    if (stepActions[step]) {
+                        stepActions[step]();
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.ctrlKey || event.altKey || event.metaKey) return;
+                const active = document.activeElement;
+                const tagName = active ? active.tagName.toLowerCase() : '';
+                if (tagName === 'input' || tagName === 'textarea') return;
+
+                if (event.key >= '1' && event.key <= '5') {
+                    const step = Number(event.key);
+                    if (stepActions[step]) {
+                        event.preventDefault();
+                        stepActions[step]();
+                    }
+                }
+            });
+        });
+
+        async function downloadCVFile() {
+            try {
+
+                const downloadLink = document.createElement('a');
+                downloadLink.href = 'CV_Lohan.pdf';
+                downloadLink.download = 'CV_Lohan_Poulain.pdf';
+                downloadLink.style.display = 'none';
+
+
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+
+
+                document.body.removeChild(downloadLink);
+
+
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<span style="margin-right: 8px; font-size: 1.2rem;">✅</span>Téléchargement en cours...';
+                button.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = 'linear-gradient(135deg, #00e0ff, #003366)';
+                }, 2000);
+
+            } catch (error) {
+                console.error('Erreur de téléchargement:', error);
+
+                window.open('CV_Lohan.pdf', '_blank');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

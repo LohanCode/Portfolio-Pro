@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1ère Année - Lohan Poulain</title>
+    <meta name="description" content="Compte rendu et preuves de mon stage de première année">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <!-- Prism.js pour coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+    <style>
+        .container {
+            max-width: 1200px !important;
+            width: 96vw !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1300px) {
+            .container {
+                max-width: 98vw !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 0 2vw;
+            }
+        }
+    </style>
+    <style>
+        .proof-image img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .proof-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            box-shadow: none;
+        }
+
+        /* Forcer la grille à 2 colonnes pour cette section si besoin */
+        .proof-images-row {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px;
+        }
+    </style>
+    <style>
+        .competence-block {
+            background: rgba(0, 224, 255, 0.07);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 10px 18px 10px 18px;
+            box-shadow: 0 2px 8px rgba(0, 224, 255, 0.04);
+        }
+
+        .competence-title {
+            font-weight: 700;
+            color: #00e0ff;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .subskills-list {
+            margin: 0 0 0 18px;
+            padding: 0 0 0 12px;
+            color: #b6eaff;
+            font-size: 0.98rem;
+        }
+
+        .subskills-list li {
+            margin-bottom: 2px;
+        }
+    </style>
+    <style>
+        .competence-card-link {
+            cursor: pointer;
+            border: 1px solid rgba(0, 224, 255, 0.15);
+            border-radius: 10px;
+            padding: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .competence-card-link:hover,
+        .competence-card-link:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 224, 255, 0.14);
+            border-color: rgba(0, 224, 255, 0.35);
+            outline: none;
+        }
+
+        .competence-card-link::after {
+            content: 'Cliquer pour ouvrir les preuves et le tableau detaille';
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.86rem;
+            color: #d8f6ff;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 224, 255, 0.14);
+        }
+
+        .competence-return-focus {
+            box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.6), 0 10px 24px rgba(0, 224, 255, 0.25);
+            border-color: rgba(0, 224, 255, 0.65) !important;
+            transition: box-shadow 0.35s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fenêtre modale pour afficher le code en grand -->
+    <div id="codeModal"
+        style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(20,22,34,0.98); align-items:center; justify-content:center;">
+        <div
+            style="max-width:90vw; max-height:90vh; overflow:auto; background:#23243a; border-radius:12px; box-shadow:0 8px 32px #000a; padding:32px 24px 24px 24px; position:relative;">
+            <button id="closeCodeModal"
+                style="position:absolute; top:18px; right:18px; background:#00e0ff; color:#23243a; border:none; border-radius:6px; font-size:1.2rem; font-weight:700; padding:6px 18px; cursor:pointer;">Fermer</button>
+            <pre id="modalCodeBlock" class="language-php"
+                style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
+        </div>
+    </div>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Stage 1ère Année</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+            <a href="projets_cours.html">🎓 Projets en Cours</a>
+            <a href="stage_2.html">🏢 Stage 2ème Année</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="animated-title">🏢 Réalisations en milieu professionnel au cours de la première année</h2>
+
+        <!-- Section Outils Utilisés -->
+        <section class="tools-used"
+            style="margin: 18px 0 12px 0; background: rgba(20,22,34,0.07); border-radius: 8px; padding: 8px 16px;">
+            <strong style="display:block; margin-bottom:6px;">Outils utilisés :</strong>
+            <ul style="display: block; list-style: none; margin: 0; padding: 0;">
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="jira.svg" alt="Jira" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">Jira</span>
+                    <span style="color:#888;">Gestion des tickets</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="bitbucket.svg" alt="Bitbucket" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">Bitbucket</span>
+                    <span style="color:#888;">Gestion de code source</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="vscode.png" alt="VS Code" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">VS Code</span>
+                    <span style="color:#888;">Éditeur de code</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="docker.png" alt="Docker" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Docker</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Plateforme de conteneurisation afin d'empaqueter des logiciels
+                        dans des conteneurs et les exécuter sur des machines cibles</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="git.png" alt="Git" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Git</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Système logiciei de contrôle de version distribué permettant de
+                        gérer les versions de code source ou de données</span>
+                </li>
+                <!-- Ajoute ici d'autres outils -->
+            </ul>
+        </section>
+
+
+
+        <!-- 1ère partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Développement de nouvelles fonctionnalités métier sur une application web existante</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block" data-images="st1_17.jpg,st1_15.jpg,st1_16.jpg,st1_11.jpg"
+                        data-tools="Jira,Bitbucket,git">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block" data-images="st1_13.jpg,st1_4.jpg,st1_2.jpg" data-tools="Jira">
+                        <div class="competence-title">Développer la présence en ligne de l'organisation
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Participer à l'évolution d'un site web exploitant les données de l'organisation</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Suite à des demandes d'évolution fonctionnelle, j'ai modifié le modèle de données de
+                        l'application afin d'intégrer de nouveaux champs et fonctionnalités. J'ai également configuré
+                        l'interface d'administration pour permettre aux utilisateurs de gérer ces nouvelles
+                        fonctionnalités. Ces évolutions ont permis d'enrichir le service proposé et de renforcer la
+                        présence en ligne de l'organisation.
+                    </p>
+                </div>
+
+                <div style="width: 100%;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        📸 Preuves
+                    </h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div class="proof-image">
+                            <img src="st1_17.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_15.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_16.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_11.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_13.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_4.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div class="proof-image">
+                            <img src="st1_2.jpg" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 3ème partie du stage
+            <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+                <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                    <h4>Travail collaboratif avec outil de ticketing (Jira)</h4>
+                    <div style="margin-top: 20px;">
+                        <h5
+                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                            🛠️ Compétences & sous-compétences mises en œuvre
+                        </h5>
+                        <div class="competence-block" data-images="st1_17.jpg" data-tools="Jira,Git">
+                            <div class="competence-title">Travailler en mode projet</div>
+                            <ul class="subskills-list">
+                                <li>Planifier les activités</li>
+                            </ul>
+                        </div>
+                        <p
+                            style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                            Le projet a été réalisé en collaboration avec l'équipe de développement. J'ai travaillé avec
+                            les autres membres du projet en utilisant des outils de gestion de versions (Git), des
+                            procédures de validation du code (pull requests) et des pipelines d'intégration continue.
+                            Cela m'a permis d'organiser mon travail, de structurer mes développements et de respecter
+                            les bonnes pratiques professionnelles.
+                        </p>
+                    </div>
+                </div>
+                
+            
+            <div style="width: 100%;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_17.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        -->
+            <!-- 4ème partie du stage
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Mise à jour technique de PHP et du bundle EasyAdmin</h4>
+                <div style="margin-top: 20px;">
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et évolution</div>
+                        <ul class="subskills-list">
+                            <li>Analyser l'impact technique d'une mise à jour</li>
+                            <li>Adapter le code aux nouvelles versions</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Mettre à jour les dépendances</li>
+                            <li>Assurer la compatibilité des outils</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Travailler en mode projet</div>
+                        <ul class="subskills-list">
+                            <li>Planifier les interventions techniques</li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Deux tickets m'ont été confiés afin de mettre à jour la version de PHP et celle de EasyAdmin, J'ai donc dû modifier plusieurs fichiers pour cela.
+                    </p>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_18.jpg" alt="Description de l'image">
+                    </div>
+                </div>
+                <div style="margin: 30px 0; text-align: center;">
+            <button id="showSecretBtn2-part4" style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher le code modifié pour le ticket</button>
+            <div id="secretText2-part4" style="display: none; margin-top: 18px; background: #282a36; border-radius: 8px; padding: 18px; border-left: 3px solid #00e0ff;">
+                <pre class="language-php" style="margin:0;"><code class="language-php">
+//Fichier bundles.php
+
+Symfony\UX\TwigComponent\TwigComponentBundle::class => ['all' => true],
+
+//Fichier twig.yaml
+
+twig_component:
+    anonymous_template_directory: 'components/'
+    defaults:
+        # Namespace & directory for components
+        App\Twig\Components\: 'components/'
+
+//Fichier AppFixtures.php
+
+&lt;?php
+
+namespace App\DataFixtures;
+
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $manager): void
+    {
+        // $product = new Product();
+        // $manager->persist($product);
+
+        $manager->flush();
+    }
+}
+
+//Fichier ArticleFixtures.php
+
+use App\Entity\Game;
+use App\Entity\Locale;
+use App\Entity\Platform;
+use App\Entity\User;
+
+public function load(ObjectManager $manager): void
+
+&#123;
+        $datas = [
+            [
+                self::KEY_TITLE => 'Sortie WRC',
+                self::KEY_BODY => '<p>Le jeu sortira bientôt..</p>',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_WRC, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_KT, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie TDU',
+                self::KEY_BODY => '<p>Le jeu sortira bientôt..</p>',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_TDU, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_KT, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie GreedFall',
+                self::KEY_BODY => 'Le jeu sortira bientôt..',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_GREEDFALL, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_SPIDERS, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+            [
+                self::KEY_TITLE => 'Sortie TDF',
+                self::KEY_BODY => 'Le jeu sortira bientôt..',
+                self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_TDF, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_CYANIDE, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                    self::KEY_GAME => $this->getReference(GameFixtures::REF_GAME_BB, Game::class),
+                self::KEY_AUTHOR => $this->getReference(UserFixtures::REF_USER_WRITER_CYANIDE, User::class),
+                self::KEY_LOCALE => $this->getReference(LocaleFixtures::LOCALE_FR_REFERENCE, Locale::class),
+                self::KEY_PLATFORMS => [
+                $this->getReference(PlatformFixtures::PLATFORM_PC_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_XBOX_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS4_REFERENCE, Platform::class),
+                    $this->getReference(PlatformFixtures::PLATFORM_PS5_REFERENCE, Platform::class),
+                ],
+            ],
+        ];
+
+//Fichier GameFixtures.php 
+
+use App\Entity\Studio;
+
+public function load(ObjectManager $manager): void
+&#123;
+        $datas = [
+            [
+                self::KEY_TITLE => 'WRC',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_KT, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_WRC,
+                self::KEY_CODE => 'wrc',
+            ],
+            [
+                self::KEY_TITLE => 'Test Drive Unlimited',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_KT, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_TDU,
+                self::KEY_CODE => 'tdu',
+            ],
+            [
+                self::KEY_TITLE => 'Greedfall',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_SPIDERS, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_GREEDFALL,
+                self::KEY_CODE => 'gf',
+            ],
+            [
+                self::KEY_TITLE => 'Tour de France 2023',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_CYANIDE, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_TDF,
+                self::KEY_CODE => 'tdf23',
+            ],
+            [
+                self::KEY_TITLE => 'BloodBowl',
+                self::KEY_STUDIO => $this->getReference(StudioFixtures::REF_STUDIO_CYANIDE, Studio::class),
+                self::KEY_REFERENCE => self::REF_GAME_BB,
+                self::KEY_CODE => 'bb',
+            ],
+
+//Fichier ArticleVoter.php 
+
+/** @var User $user */
+        $user = $this->security->getUser();
+        /** @var Article $subject */
+        if ($subject->getGame()) {
+            $studio = $subject->getGame()->getStudio();
+            $userStudioIsSameAsArticle = $user->hasStudio($studio);
+            $userIsAuthor = $this->articleTranslation->getAuthor() == $user;
+            $isGrantedArticleRead = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_READER) && $userStudioIsSameAsArticle)
+            ;
+            $isGrantedArticleUpdate = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_PRODUCER) && $userStudioIsSameAsArticle)
+                || ($this->security->isGranted(User::ROLE_WRITER) && $userStudioIsSameAsArticle && $userIsAuthor)
+            ;
+            $isGrantedArticleDelete = $this->security->isGranted(User::ROLE_ADMIN)
+                || ($this->security->isGranted(User::ROLE_PRODUCER) && $userStudioIsSameAsArticle)
+            ;
+
+            return match ($attribute) {
+                Article::ARTICLE_READ => $isGrantedArticleRead,
+                Article::ARTICLE_UPDATE => $isGrantedArticleUpdate,
+                Article::ARTICLE_DELETE => $isGrantedArticleDelete,
+                default => false,
+            };
+        }
+                </code></pre>
+            </div>
+        </div>
+    -->
+
+
+            <!-- 5ème partie du stage -->
+            <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+                <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                    <h4>Montée en compétences sur Symfony et outils de développement professionnels</h4>
+                    <div style="margin-top: 20px;">
+                        <h5
+                            style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                            🛠️ Compétences & sous-compétences mises en œuvre
+                        </h5>
+                        <div class="competence-block" data-images="symfony.PNG, st1_19.PNG, st1_20.PNG ">
+                            <div class="competence-title">Organiser son développement professionnel</div>
+                            <ul class="subskills-list">
+                                <li>Mettre en place son environnement d'apprentissage personnel</li>
+                            </ul>
+                        </div>
+                        <p
+                            style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                            Au cours de mon stage, j'ai renforcé mes compétences sur le framework Symfony ainsi que sur
+                            les outils de développement utilisés en entreprise et les outils de collaboration. J'ai
+                            également maintenu les versions à jour pour éviter que le site ne devienne obsolète ou
+                            vulnérable.
+                        </p>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        📸 Preuves
+                    </h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div class="proof-image">
+                            <img src="symfony.PNG" alt="">
+                            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                            </p>
+                        </div>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div class="proof-image">
+                                <img src="st1_19.PNG" alt="">
+                                <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                                </p>
+                            </div>
+                            <div class="proof-image">
+                                <img src="st1_20.PNG" alt="">
+                                <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                                </p>
+                            </div>
+
+                        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+
+        <div style="width: 100%;">
+            <h5
+                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                📸 Preuves
+            </h5>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="proof-image">
+                    <img src="symfony.PNG" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier1.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier2.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var test = document.getElementById('test');
+            var test2 = document.getElementById('test2');
+            if (test && test2) {
+                test.addEventListener('click', function () {
+                    if (test2.style.display === 'none') {
+                        test2.style.display = 'block';
+                        test.textContent = 'Masquer le code modifié pour le ticket';
+                    } else {
+                        test2.style.display = 'none';
+                        test.textContent = 'Afficher le code modifié pour le ticket';
+                    }
+                });
+            }
+            // Fonction pour ouvrir le code en plein écran
+            function openCodeModal(codeHtml) {
+                const modal = document.getElementById('codeModal');
+                const codeBlock = document.getElementById('modalCodeBlock').querySelector('code');
+                codeBlock.innerHTML = codeHtml;
+                modal.style.display = 'flex';
+                Prism.highlightElement(codeBlock);
+                document.body.style.overflow = 'hidden';
+            }
+            function closeCodeModal() {
+                document.getElementById('codeModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            document.getElementById('closeCodeModal').onclick = closeCodeModal;
+            // Partie 1
+            var btn2p1 = document.getElementById('showSecretBtn2-part1');
+            var secret2p1 = document.getElementById('secretText2-part1');
+            if (btn2p1 && secret2p1) {
+                btn2p1.addEventListener('click', function () {
+                    var code = secret2p1.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+            // Partie 2
+            var btn2p2 = document.getElementById('showSecretBtn2-part2');
+            var secret2p2 = document.getElementById('secretText2-part2');
+            if (btn2p2 && secret2p2) {
+                btn2p2.addEventListener('click', function () {
+                    var code = secret2p2.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+            // Partie 4
+            var btn2p4 = document.getElementById('showSecretBtn2-part4');
+            var secret2p4 = document.getElementById('secretText2-part4');
+            if (btn2p4 && secret2p4) {
+                btn2p4.addEventListener('click', function () {
+                    var code = secret2p4.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+
+            // Script Lightbox pour zoom sur les images
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+            const proofImages = document.querySelectorAll('.proof-image img');
+
+            proofImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.classList.remove('zoomed');
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.classList.toggle('zoomed');
+                if (!lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.style.transformOrigin = 'center center';
+                }
+            });
+
+            lightboxImg.addEventListener('mousemove', (e) => {
+                if (lightboxImg.classList.contains('zoomed')) {
+                    const x = (e.offsetX / lightboxImg.offsetWidth) * 100;
+                    const y = (e.offsetY / lightboxImg.offsetHeight) * 100;
+                    lightboxImg.style.transformOrigin = `${x}% ${y}%`;
+                }
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.transformOrigin = 'center center';
+                document.body.style.overflow = 'auto';
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sourcePage = window.location.pathname.split('/').pop() || 'stage_1.html';
+            const interactiveContents = document.querySelectorAll('.proof-item .proof-content');
+            const contentsArray = Array.from(interactiveContents);
+
+            const currentHash = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+
+            const buildPayload = (content) => {
+                const realisation = content.querySelector('h4')?.textContent.trim() || 'Realisation';
+
+                /*
+                 * Pour associer des images à une compétence précise, ajoutez l'attribut
+                 * data-images="fichier1.jpg,fichier2.jpg" sur le div.competence-block.
+                 *
+                 * Pour lister les outils utilisés pour cette réalisation, ajoutez l'attribut
+                 * data-tools="Jira,Git,VS Code" sur le div.proof-content.
+                 * Exemple :
+                 *   <div class="proof-content" data-tools="Jira,Git,VS Code" style="...">
+                 */
+                let competences = [];
+                Array.from(content.querySelectorAll('.competence-block')).forEach((block) => {
+                    const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
+                    const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+
+                    const rawImages = block.getAttribute('data-images') || '';
+                    const rawTools = block.getAttribute('data-tools') || '';
+
+                    if (subskills.length > 1) {
+                        const hasImageGroups = rawImages.includes('|');
+                        const imageGroups = hasImageGroups ? rawImages.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        const defaultImages = !hasImageGroups ? rawImages.split(',').map(s => s.trim()).filter(Boolean) : [];
+                        const chunkImgSize = defaultImages.length > 0 ? Math.ceil(defaultImages.length / subskills.length) : 0;
+
+                        const hasToolGroups = rawTools.includes('|');
+                        const toolGroups = hasToolGroups ? rawTools.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        // Par defaut, on assigne tous les outils a chaque sous-competence s'il n'y a pas de separateur |
+                        const defaultTools = !hasToolGroups ? rawTools.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                        subskills.forEach((subskill, i) => {
+                            const subImages = hasImageGroups ? (imageGroups[i] || []) : defaultImages.slice(i * chunkImgSize, (i + 1) * chunkImgSize);
+                            const subTools = hasToolGroups ? (toolGroups[i] || []) : defaultTools;
+                            competences.push({ title, subskills: [subskill], images: subImages, tools: subTools });
+                        });
+                    } else {
+                        const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                        const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                        competences.push({ title, subskills, images, tools });
+                    }
+                });
+
+                const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
+
+                const payload = {
+                    sourcePage: sourceWithAnchor,
+                    realisation,
+                    competences
+                };
+
+                return payload;
+            };
+
+            const openDetailPage = (content) => {
+                const payload = buildPayload(content);
+                sessionStorage.setItem('competenceDetailData', JSON.stringify(payload));
+                window.location.href = 'competence_details.html';
+            };
+
+            interactiveContents.forEach((content, index) => {
+                const parentProof = content.closest('.proof-item');
+                if (!parentProof) {
+                    return;
+                }
+
+                if (!content.id) {
+                    content.id = 'competence-stage1-' + (index + 1);
+                }
+
+                content.classList.add('competence-card-link');
+                content.setAttribute('role', 'button');
+                content.setAttribute('tabindex', '0');
+
+                if (currentHash && content.id === currentHash) {
+                    setTimeout(() => {
+                        content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        content.classList.add('competence-return-focus');
+                        setTimeout(() => content.classList.remove('competence-return-focus'), 2200);
+                    }, 80);
+                }
+
+                content.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button, input, select, textarea, label')) {
+                        return;
+                    }
+                    openDetailPage(content);
+                });
+
+                content.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openDetailPage(content);
+                    }
+                });
+            });
+
+            /* ── Masquage et bascule des Preuves ── */
+            const preuveHeaders = document.querySelectorAll('h5');
+            preuveHeaders.forEach(h5 => {
+                if (h5.textContent.includes('📸 Preuves')) {
+                    const container = h5.parentElement;
+                    const grid = container.querySelector('div[style*="display: grid"]');
+
+                    if (grid) {
+                        grid.style.display = 'none'; // Masqué par défaut
+
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Afficher les screens';
+                        btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
+
+                        btn.onmouseover = () => {
+                            btn.style.background = '#00e0ff';
+                            btn.style.color = '#001a2d';
+                        };
+                        btn.onmouseout = () => {
+                            if (grid.style.display === 'none') {
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                            } else {
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            }
+                        };
+
+                        btn.onclick = (e) => {
+                            e.stopPropagation(); // Éviter de cliquer sur la carte mère
+                            if (grid.style.display === 'none') {
+                                grid.style.display = 'grid';
+                                btn.textContent = 'Masquer les screens';
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            } else {
+                                grid.style.display = 'none';
+                                btn.textContent = 'Afficher les screens';
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                                btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
+                            }
+                        };
+
+                        // Ajouter le bouton à côté du titre H5
+                        h5.appendChild(btn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

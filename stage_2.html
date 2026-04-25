@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2ème Année - Lohan Poulain</title>
+    <meta name="description" content="Compte rendu et preuves de mon stage de deuxième année">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .competence-block {
+            background: rgba(0, 224, 255, 0.07);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 10px 18px 10px 18px;
+            box-shadow: 0 2px 8px rgba(0, 224, 255, 0.04);
+        }
+
+        .competence-title {
+            font-weight: 700;
+            color: #00e0ff;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .subskills-list {
+            margin: 0 0 0 18px;
+            padding: 0 0 0 12px;
+            color: #b6eaff;
+            font-size: 0.98rem;
+        }
+
+        .subskills-list li {
+            margin-bottom: 2px;
+        }
+    </style>
+    <style>
+        .competence-card-link {
+            cursor: pointer;
+            border: 1px solid rgba(0, 224, 255, 0.15);
+            border-radius: 10px;
+            padding: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .competence-card-link:hover,
+        .competence-card-link:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 224, 255, 0.14);
+            border-color: rgba(0, 224, 255, 0.35);
+            outline: none;
+        }
+
+        .competence-card-link::after {
+            content: 'Cliquer pour ouvrir les preuves et le tableau detaille';
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.86rem;
+            color: #d8f6ff;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 224, 255, 0.14);
+        }
+
+        .competence-return-focus {
+            box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.6), 0 10px 24px rgba(0, 224, 255, 0.25);
+            border-color: rgba(0, 224, 255, 0.65) !important;
+            transition: box-shadow 0.35s ease;
+        }
+    </style>
+    <style>
+        .container {
+            max-width: 1200px !important;
+            width: 96vw !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1300px) {
+            .container {
+                max-width: 98vw !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 0 2vw;
+            }
+        }
+    </style>
+    <!-- Prism.js pour coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+</head>
+
+<body>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Stage 2ème Année</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+            <a href="projets_cours.html">🎓 Projets en Cours</a>
+            <a href="stage_1.html">🏢 Stage 1ère Année</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="animated-title">🏢 Réalisations en milieu professionnel au cours de deuxième année</h2>
+
+        <section class="tools-used"
+            style="margin: 18px 0 12px 0; background: rgba(20,22,34,0.07); border-radius: 8px; padding: 8px 16px;">
+            <strong style="display:block; margin-bottom:6px;">Outils utilisés :</strong>
+            <ul style="display: block; list-style: none; margin: 0; padding: 0;">
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="jira.svg" alt="Jira" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">Jira</span>
+                    <span style="color:#888;">Gestion des tickets</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="bitbucket.svg" alt="Bitbucket" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">Bitbucket</span>
+                    <span style="color:#888;">Gestion de code source</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="vscode.png" alt="VS Code" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">VS Code</span>
+                    <span style="color:#888;">Éditeur de code</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="docker.png" alt="Docker" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Docker</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Plateforme de conteneurisation afin d'empaqueter des logiciels
+                        dans des conteneurs et les exécuter sur des machines cibles</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="git.png" alt="Git" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Git</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Système logiciei de contrôle de version distribué permettant de
+                        gérer les versions de code source ou de données</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="cerberus.png" alt="Cerberus" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Cerberus</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Il permet de créer des tests automatisés pour les applications
+                        web, mobiles et les API.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="postman.png" alt="Postman" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Postman</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Permet de tester des API (Application Programming
+                        Interface)</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="cursor.png" alt="Cursor" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Cursor</span>
+                    </span>
+                    <span style="color:#888; flex:1;">IDE (Environnement de développement intégré) basé sur VSCode avec
+                        une intelligence
+                        artificielle intégré permettant d'améliorer la productivité des développeurs.
+                    </span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="ServeurKebab.png" alt="Serveur Kebab"
+                            style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Serveur Kebab</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Serveur appelé Kebab pour testé les différentes fonctionnalités
+                        du site web en interne.
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- 1ère partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Mise à jour technique du framework Symfony et du bundle EasyAdmin</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block" data-images="st2_7.jpg, st2_3.jpg" data-tools="Jira, VS Code">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Déployer un service</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Un ticket m'a été confié afin de réaliser la mise à jour du framework Symfony et du bundle
+                        EasyAdmin vers leurs dernières versions stables. Cette évolution technique avait pour objectif
+                        d'améliorer la sécurité, les performances et la maintenabilité de l'application, tout en
+                        conservant l'ensemble de fonctionnalités existantes.
+                    </p>
+                </div>
+            </div>
+
+
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st2_7.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_3.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2ème partie du stage
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Mise à jour de composants applicatifs et corrections des problèmes rencontrés</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+    
+                    </div>
+                    <div class="competence-block" data-images="st2_4.jpg, st2_11.jpg" data-tools="Cursor, Git, Docker">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Suite à la mise à jour de certains composants applicatifs, des dysfonctionnements techniques
+                        sont apparus lors des phases de test. J'ai analysé l'impact de ces évolutions et apporté les
+                        corrections nécessaires afin de garantir la stabilité et le bon fonctionnement de l'application
+                        sans régression fonctionnelle.
+                    </p>
+                </div>
+            </div>
+            
+        
+            <div style="width: 100%;">
+                <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st2_4.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_11.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    -->
+        <!-- 3ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Tests techniques et validations du fonctionnement du service</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block" data-images="st2_12.jpg, st2_15.jpg, st2_10.jpg, st2_13.jpg"
+                        data-tools="Cerberus, Serveur Kebab, Postman">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Afin de garantir la qualité du service applicatif, j'ai réalisé des tests techniques. Ces tests
+                        m'ont permis de vérifier le bon fonctionnement de l'application et vérifier si elle était
+                        pleinement opérationnelle après les différentes interventions réalisées précédemment.
+                    </p>
+                </div>
+            </div>
+
+
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st2_12.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_15.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_10.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_13.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4ème partie du stage 
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Utilisation et test d'une API métier</h4>
+                <div style="margin-top: 20px;">
+                    <h5 style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique</div>
+                        <ul class="subskills-list">
+                            <li>Réaliser les tests d'intégration et d'acceptation d'un service</li>
+                        </ul>
+                    </div>
+                    <p style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        J'ai utilisé l'outil Postman afin de tester une API pour l'import de commande dans l'application. Ces tests m'ont permis de vérifier la validité des échanges de données et de confirmer le bon fonctionnement de l'API.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    -->
+        <!-- 5ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Correction de divers problèmes techniques</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en œuvre
+                    </h5>
+                    <div class="competence-block" data-images="st2_18.jpg, st2_17.jpg, st2_19.jpg, st2_20.jpg"
+                        data-tools="Jira, Bitbucket, git">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block"
+                        data-images=", st2_20.jpg, garder_3.png, garder.png, st2_17.jpg, garder_2.png"
+                        data-tools="Jira, Bitbucket, vscode, git">
+                        <div class="competence-title">Développer la présence en ligne de l'organisation</div>
+                        <ul class="subskills-list">
+                            <li>Participer à la valorisation de l'image de l'organisation sur les médias numériques
+                                en tenant compte du cadre juridique et des enjeux économiques
+                            </li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        J'ai été disposé à résoudre deux tickets pour corriger divers problèmes techniques qu'il y avait
+                        déjà auparavant sur le site.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sous-section Ticket 1 -->
+            <div style="width: 100%; margin-top: 30px;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    Ticket 1: Correction d'un problème d'affichage de données
+                </h5>
+                <p
+                    style="margin: 8px 0 15px 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                    J'ai résolu un problème où certaines données ne s'affichaient pas correctement dans l'interface
+                    utilisateur, en identifiant la cause dans la logique de récupération des données et en appliquant la
+                    correction nécessaire.
+                </p>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button id="showCodeBtn-st2-ticket1"
+                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
+                        le code — Ticket 1</button>
+                    <div id="codeHidden-st2-ticket1" style="display: none;">
+                        <pre style="margin:0;"><code class="language-php">
+//movement.js.twig
+   $('#{&#123;&#123; formId &#125;&#125;}').submit();
+});
+
+// Définir la valeur minimale à 1, maximale à 10000 et rendre le champ obligatoire
+$('#product_location_qty').attr('min', '1');
+$('#product_location_qty').attr('max', '10000');
+$('#product_location_qty').attr('required', 'required');
+
+// Empêcher la soumission si la quantité est vide
+$('#{&#123;&#123; formId &#125;&#125;}').on('submit', function(e) &#123;
+    var qtyValue = $('#product_location_qty').val();
+    if (!qtyValue || qtyValue === '') &#123;
+        e.preventDefault();
+        $('#product_location_qty')[0].setCustomValidity('Veuillez remplir ce champ.');
+        $('#product_location_qty')[0].reportValidity();
+        $('#product_location_qty').focus();
+        return false;
+    &#125; else &#123;
+        $('#product_location_qty')[0].setCustomValidity('');
+    &#125;
+});
+
+if (!$('#product_location_product_ean').val()) &#123;
+    $('#product_location_product_ean').focus();
+&#125; else if (!$('#product_location_location_gencode').val()) &#123;
+
+// restock.js.twig
+   $('#form-restock').submit();
+});
+
+$('#restock_qty').attr('min', '1');
+$('#restock_qty').attr('max', '10000');
+$('#restock_qty').attr('required', 'required');
+
+$('#form-restock').on('submit', function(e) &#123;
+    var qtyValue = $('#restock_qty').val();
+    if (!qtyValue || qtyValue === '') &#123;
+        e.preventDefault();
+        $('#restock_qty')[0].setCustomValidity('Veuillez remplir ce champ.');
+        $('#restock_qty')[0].reportValidity();
+        $('#restock_qty').focus();
+        return false;
+    &#125; else &#123;
+        $('#restock_qty')[0].setCustomValidity('');
+    &#125;
+});
+
+if (!$('#restock_ean').val()) &#123;
+    $('#restock_ean').focus();
+&#125;
+                        </code></pre>
+                    </div>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div class="proof-image">
+                        <img src="st2_19.jpg" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_20.jpg" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="garder_3.png" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="garder.png" alt="Description de l'image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sous-section Ticket 2 -->
+            <div style="width: 100%; margin-top: 30px;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    Ticket 2: Problème de synchronisation lié au site
+                </h5>
+                <p
+                    style="margin: 8px 0 15px 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                    Il y avait un problème de synchronisation entre les différentes langues du site que j'ai donc
+                    du modifier. Où le pays d'origine n'était pas pris en compte et par défaut c'était donc la France.
+
+                </p>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button id="showCodeBtn-st2-ticket2"
+                        style="background: #00e0ff; color: #222; border: none; border-radius: 8px; padding: 10px 22px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 2px 8px rgba(0,224,255,0.15); transition: background 0.2s;">Afficher
+                        le code — Ticket 2</button>
+                    <div id="codeHidden-st2-ticket2" style="display: none;">
+                        <pre style="margin:0;"><code class="language-php">
+//AddressType.php
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+public function buildForm(FormBuilderInterface $builder, array $options): void
+    &#123;
+        $defaultCountry = $this-&gt;countryRepository-&gt;findOneBy(['code' =&gt; 'FR']);
+
+        $builder-&gt;addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) use ($defaultCountry): void &#123;
+            $address = $event-&gt;getData();
+            if (null === $address) &#123;
+                $address = new Address();
+                $address-&gt;setCountry($defaultCountry);
+                $event-&gt;setData($address);
+            &#125; elseif ($address instanceof Address &amp;&amp; null === $address-&gt;getCountry()) &#123;
+                $address-&gt;setCountry($defaultCountry);
+            &#125;
+        &#125;);
+
+        $builder
+            -&gt;add('company', TextType::class, [
+                'label' =&gt; $this-&gt;translator-&gt;trans('order.detail.address.company'),
+            ])
+        ;
+    &#125;
+                        </code></pre>
+                    </div>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div class="proof-image">
+                        <img src="st2_18.jpg" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="st2_17.jpg" alt="Description de l'image">
+                    </div>
+                    <div class="proof-image">
+                        <img src="garder_2.png" alt="Description de l'image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+    </div>
+
+    <!-- Fenêtre modale pour afficher le code en grand -->
+    <div id="codeModal"
+        style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(20,22,34,0.98); align-items:center; justify-content:center;">
+        <div
+            style="max-width:90vw; max-height:90vh; overflow:auto; background:#23243a; border-radius:12px; box-shadow:0 8px 32px #000a; padding:32px 24px 24px 24px; position:relative;">
+            <button id="closeCodeModal"
+                style="position:absolute; top:18px; right:18px; background:#00e0ff; color:#23243a; border:none; border-radius:6px; font-size:1.2rem; font-weight:700; padding:6px 18px; cursor:pointer;">Fermer</button>
+            <pre id="modalCodeBlock" class="language-php"
+                style="background:none; margin:0; font-size:1.1rem;"><code class="language-php"></code></pre>
+        </div>
+
+        <div style="width: 100%;">
+            <h5
+                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                📸 Preuves
+            </h5>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="proof-image">
+                    <img src="st2_18.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="st2_17.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="st2_19.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="st2_20.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="garder_3.png" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="garder.png" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="garder_2.png" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier1.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier2.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // === Fonction modale code (identique à stage_1.html) ===
+            function openCodeModal(codeHtml) {
+                const modal = document.getElementById('codeModal');
+                const codeBlock = document.getElementById('modalCodeBlock').querySelector('code');
+                codeBlock.innerHTML = codeHtml;
+                modal.style.display = 'flex';
+                Prism.highlightElement(codeBlock);
+                document.body.style.overflow = 'hidden';
+            }
+            function closeCodeModal() {
+                document.getElementById('codeModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            document.getElementById('closeCodeModal').onclick = closeCodeModal;
+
+            // === Bouton Ticket 1 ===
+            var btnT1 = document.getElementById('showCodeBtn-st2-ticket1');
+            var codeT1 = document.getElementById('codeHidden-st2-ticket1');
+            if (btnT1 && codeT1) {
+                btnT1.addEventListener('click', function () {
+                    var code = codeT1.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+
+            // === Bouton Ticket 2 ===
+            var btnT2 = document.getElementById('showCodeBtn-st2-ticket2');
+            var codeT2 = document.getElementById('codeHidden-st2-ticket2');
+            if (btnT2 && codeT2) {
+                btnT2.addEventListener('click', function () {
+                    var code = codeT2.querySelector('code').innerHTML;
+                    openCodeModal(code);
+                });
+            }
+
+            // === Lightbox images ===
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+            const proofImages = document.querySelectorAll('.proof-image img');
+
+            proofImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.classList.remove('zoomed');
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.classList.toggle('zoomed');
+                if (!lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.style.transformOrigin = 'center center';
+                }
+            });
+
+            lightboxImg.addEventListener('mousemove', (e) => {
+                if (lightboxImg.classList.contains('zoomed')) {
+                    const x = (e.offsetX / lightboxImg.offsetWidth) * 100;
+                    const y = (e.offsetY / lightboxImg.offsetHeight) * 100;
+                    lightboxImg.style.transformOrigin = `${x}% ${y}%`;
+                }
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.transformOrigin = 'center center';
+                document.body.style.overflow = 'auto';
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (lightbox.classList.contains('active')) closeLightbox();
+                    if (document.getElementById('codeModal').style.display === 'flex') closeCodeModal();
+                }
+            });
+
+            const sourcePage = window.location.pathname.split('/').pop() || 'stage_2.html';
+            const interactiveContents = document.querySelectorAll('.proof-item .proof-content');
+            const contentsArray = Array.from(interactiveContents);
+
+            const currentHash = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+
+            const buildPayload = (content) => {
+                const realisation = content.querySelector('h4')?.textContent.trim() || 'Realisation';
+
+                /*
+                 * Pour associer des images à une compétence précise, ajoutez l'attribut
+                 * data-images="fichier1.jpg,fichier2.jpg" sur le div.competence-block.
+                 *
+                 * Pour lister les outils utilisés pour cette réalisation, ajoutez l'attribut
+                 * data-tools="Jira,Git,VS Code" sur le div.proof-content.
+                 */
+                let competences = [];
+                Array.from(content.querySelectorAll('.competence-block')).forEach((block) => {
+                    const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
+                    const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+
+                    const rawImages = block.getAttribute('data-images') || '';
+                    const rawTools = block.getAttribute('data-tools') || '';
+
+                    if (subskills.length > 1) {
+                        const hasImageGroups = rawImages.includes('|');
+                        const imageGroups = hasImageGroups ? rawImages.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        const defaultImages = !hasImageGroups ? rawImages.split(',').map(s => s.trim()).filter(Boolean) : [];
+                        const chunkImgSize = defaultImages.length > 0 ? Math.ceil(defaultImages.length / subskills.length) : 0;
+
+                        const hasToolGroups = rawTools.includes('|');
+                        const toolGroups = hasToolGroups ? rawTools.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        // Par defaut, on assigne tous les outils a chaque sous-competence s'il n'y a pas de separateur |
+                        const defaultTools = !hasToolGroups ? rawTools.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                        subskills.forEach((subskill, i) => {
+                            const subImages = hasImageGroups ? (imageGroups[i] || []) : defaultImages.slice(i * chunkImgSize, (i + 1) * chunkImgSize);
+                            const subTools = hasToolGroups ? (toolGroups[i] || []) : defaultTools;
+                            competences.push({ title, subskills: [subskill], images: subImages, tools: subTools });
+                        });
+                    } else {
+                        const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                        const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                        competences.push({ title, subskills, images, tools });
+                    }
+                });
+
+                const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
+
+                const payload = {
+                    sourcePage: sourceWithAnchor,
+                    realisation,
+                    competences
+                };
+
+                return payload;
+            };
+
+            const openDetailPage = (content) => {
+                const payload = buildPayload(content);
+                sessionStorage.setItem('competenceDetailData', JSON.stringify(payload));
+                window.location.href = 'competence_details.html';
+            };
+
+            interactiveContents.forEach((content, index) => {
+                const parentProof = content.closest('.proof-item');
+                if (!parentProof) {
+                    return;
+                }
+
+                if (!content.id) {
+                    content.id = 'competence-stage2-' + (index + 1);
+                }
+
+                content.classList.add('competence-card-link');
+                content.setAttribute('role', 'button');
+                content.setAttribute('tabindex', '0');
+
+                if (currentHash && content.id === currentHash) {
+                    setTimeout(() => {
+                        content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        content.classList.add('competence-return-focus');
+                        setTimeout(() => content.classList.remove('competence-return-focus'), 2200);
+                    }, 80);
+                }
+
+                content.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button, input, select, textarea, label')) {
+                        return;
+                    }
+                    openDetailPage(content);
+                });
+
+                content.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openDetailPage(content);
+                    }
+                });
+            });
+            /* ── Masquage et bascule des Preuves ── */
+            const preuveHeaders = document.querySelectorAll('h5');
+            preuveHeaders.forEach(h5 => {
+                if (h5.textContent.includes('📸 Preuves')) {
+                    const container = h5.parentElement;
+                    const grid = container.querySelector('div[style*="display: grid"]');
+
+                    if (grid) {
+                        grid.style.display = 'none'; // Masqué par défaut
+
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Afficher les screens';
+                        btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
+
+                        btn.onmouseover = () => {
+                            btn.style.background = '#00e0ff';
+                            btn.style.color = '#001a2d';
+                        };
+                        btn.onmouseout = () => {
+                            if (grid.style.display === 'none') {
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                            } else {
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            }
+                        };
+
+                        btn.onclick = (e) => {
+                            e.stopPropagation(); // Éviter de cliquer sur la carte mère
+                            if (grid.style.display === 'none') {
+                                grid.style.display = 'grid';
+                                btn.textContent = 'Masquer les screens';
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            } else {
+                                grid.style.display = 'none';
+                                btn.textContent = 'Afficher les screens';
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                                btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
+                            }
+                        };
+
+                        // Ajouter le bouton à côté du titre H5
+                        h5.appendChild(btn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

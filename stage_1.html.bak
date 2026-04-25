@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1ère Année - Lohan Poulain</title>
+    <meta name="description" content="Compte rendu et preuves de mon stage de première année">
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Stage 1ère Année</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="animated-title">🏢 Réalisations en milieu professionnel au cours de première année</h2>
+
+
+        <!-- 1ère partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Développement de nouvelles fonctionnalités métier sur une application web existante</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+
+                        <div class="skill-item-detailed" id="stage1-incidents-evolution">
+                            <span class="skill-tag">Répondre aux incidents et aux demandes d'assistance et
+                                d'évolution</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Suite à des demandes d'évolution fonctionnelle, j'ai modifié le modèle de données de
+                                l'application afin d'intégrer de nouveaux champs. Cela à permis d'adapter l'application
+                                à de nouveaux besoins exprimés par les utilisateurs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                    <div class="proof-image">
+
+                        <img src="st1_4.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 2ème partie du stage -->
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Développement de nouvelles fonctionnalités métier sur une application web existante</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list">
+                        <div class="skill-item-detailed" id="stage1-presence-en-ligne">
+                            <span class="skill-tag">Développer la présence en ligne de l'organisation</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                J'ai participé à l'évolution d'une application web existante en ajoutant de nouvelles
+                                fonctionnalités. Ces fonctionnalités ont permis d'enrichir le service proposé par
+                                l'organisation et de renforcer sa présence en ligne et mieux adaptée aux besoins des
+                                utilisateurs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                    <div class="proof-image">
+
+                        <img src="st1_2.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 3ème partie du stage -->
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Développement de nouvelles fonctionnalités métier sur une application web existante</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list">
+                        <div class="skill-item-detailed" id="stage1-disposition-service">
+                            <span class="skill-tag">Mettre à disposition des utilisateurs un service
+                                numérique</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                J'ai configuré l'interface d'administration de l'application afin de permettre aux
+                                utilisateurs de gérer les nouvelles fonctionnalités.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                    <div class="proof-image">
+
+                        <img src="st1_3.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4ème partie du stage -->
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list">
+                        <div class="skill-item-detailed" id="stage1-incidents-evolution2">
+
+                            <span class="skill-tag">Répondre aux incidents et aux demandes d'assistance et
+                                d'évolution</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                L'application étant déjà en production, j'ai participé à sa maintenance
+                                évolutive
+                                en réalisant des modifications sur des fonctionnalités existantes. Cela à
+                                également
+                                permis de corrigés certains problèmes et adapter l'application aux besoins.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                    <div class="proof-image">
+
+                        <img src="st1_8.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 5ème partie du stage -->
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Maintenance évolutive d'une application web en environnement professionnel</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list">
+                        <div class="skill-item-detailed" id="stage1-disposition-service2">
+
+                            <span class="skill-tag">Mettre à disposition des utilisateurs un service
+                                numérique</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Les évolutions réalisées ont été intégrées directement dans l'interface de
+                                l'application pour que les utilisateurs puissent continuer à utiliser le
+                                service dans de bonnes conditions, avec les mises à jour...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                    <div class="proof-image">
+
+                        <img src="st1_9.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Travail collaboratif et gestion de versions dans un projet de développement</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+
+                        <div class="skill-item-detailed" id="stage1-travail-collectif">
+                            <span class="skill-tag">Travailler en mode projet</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Le projet a été réalisé en collaboration avec l'équipe de développement.
+                                J'ai travaillé avec les autres membres du projet en utilisant des outils
+                                de gestion de versions et des procédures de validation du code.
+                            </p>
+                        </div>
+
+                        <div class="skill-item-detailed" id="stage1-organiser-developpement">
+                            <span class="skill-tag">Organiser son développement professionnel</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                J'ai utilisé un système de gestion de versions avec Git ainsi que des
+                                pull requests et des pipelines.
+                                Cela m'a permis d'organiser mon travail, de structurer mes
+                                développements et de respecter les bonnes pratiques professionnelles.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_5.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Participer à la mise à disposition et à l'exploitation d'un service applicatif</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+                        <div class="skill-item-detailed" id="stage1-presence-en-ligne2">
+                            <span class="skill-tag">Développer la présence en ligne de l'organisation</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                L'application web développée a permis à l'organisation de gérer des
+                                contenus. La mise en place de cette application contribue à la présence
+                                en ligne de l'entreprise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_9.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Participer à la mise à disposition et à l'exploitation d'un service applicatif</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+                        <div class="skill-item-detailed" id="stage1-disposition-service3">
+                            <span class="skill-tag">Mettre à disposition des utilisateurs un service numérique</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Le service a été mis à disposition des utilisateurs par une interface, ce
+                                qui leur permet d'exploiter les fonctionnalités proposées.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_2.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9ème partie du stage -->
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Montée en compétences sur Symfony et outils de développement professionnels</h4>
+
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétence mise en œuvre
+                    </h5>
+                    <div class="skill-list" style="flex-direction: column; gap: 15px;">
+                        <div class="skill-item-detailed" id="stage1-organiser-developpement2">
+                            <span class="skill-tag">Organiser son développement professionnel</span>
+                            <p
+                                style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                                Au cours de mon stage, j'ai renforcé mes compétences sur le framework Symfony ainsi que
+                                sur les outils de développement
+                                utilisés en entreprise. L'utilisation de Git et des pipelines m'ont permis d'améliorer
+                                mon organisation et mes méthodes de travail.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="st1_5.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="st1_1.jpg" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+
+            // Script Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+            const proofImages = document.querySelectorAll('.proof-image img');
+
+            proofImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.classList.remove('zoomed');
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.classList.toggle('zoomed');
+                if (!lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.style.transformOrigin = 'center center';
+                }
+            });
+
+            lightboxImg.addEventListener('mousemove', (e) => {
+                if (lightboxImg.classList.contains('zoomed')) {
+                    const rect = lightboxImg.getBoundingClientRect();
+
+                    const x = (e.offsetX / lightboxImg.offsetWidth) * 100;
+                    const y = (e.offsetY / lightboxImg.offsetHeight) * 100;
+
+                    lightboxImg.style.transformOrigin = `${x}% ${y}%`;
+                }
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.transformOrigin = 'center center';
+                document.body.style.overflow = 'auto';
+            };
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

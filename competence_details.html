@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail competences et preuves</title>
+    <meta name="description" content="Detail d'une realisation avec preuves et tableau de competences">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .details-wrapper {
+            margin-top: 24px;
+        }
+
+        /* ── Container large (comme les autres pages) ── */
+        .container {
+            max-width: 1200px !important;
+            width: 96vw !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1300px) {
+            .container {
+                max-width: 98vw !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 0 2vw;
+            }
+        }
+
+        .highlight-panel {
+            background: rgba(0, 224, 255, 0.08);
+            border: 1px solid rgba(0, 224, 255, 0.25);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+        }
+
+        .highlight-panel p {
+            margin: 0;
+            color: #dff9ff;
+            font-size: 0.95rem;
+        }
+
+        /* ── Tableau principal ── */
+        .competence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .competence-table th,
+        .competence-table td {
+            padding: 14px 16px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .competence-table th {
+            background: rgba(0, 224, 255, 0.16);
+            color: #ffffff;
+            font-size: 0.96rem;
+            white-space: nowrap;
+        }
+
+        .competence-table td {
+            background: rgba(20, 22, 34, 0.72);
+        }
+
+        .competence-table tr.highlighted td {
+            background: rgba(0, 224, 255, 0.06);
+        }
+
+        /* Largeurs des colonnes */
+        .col-competence {
+            width: 28%;
+        }
+
+        .col-subskills {
+            width: 34%;
+        }
+
+        .col-preuves {
+            width: 38%;
+        }
+
+        /* ── Grille de miniatures dans la cellule Preuves ── */
+        .cell-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .cell-proof-thumb {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 224, 255, 0.22);
+            background: rgba(20, 22, 34, 0.65);
+            cursor: zoom-in;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .cell-proof-thumb:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 14px rgba(0, 224, 255, 0.28);
+        }
+
+        .cell-proof-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 7px;
+        }
+
+        .cell-proof-thumb .zoom-icon {
+            position: absolute;
+            bottom: 4px;
+            right: 5px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.75);
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 4px;
+            padding: 1px 4px;
+            pointer-events: none;
+        }
+
+        .no-proof {
+            color: #7ba8c0;
+            font-size: 0.88rem;
+            font-style: italic;
+        }
+
+        /* ── Lightbox ── */
+        /* (garde le style global de styles.css, on ajoute juste navigation) */
+
+        /* ── Bouton retour ── */
+        .back-link-wrap {
+            margin-top: 12px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #001a2d;
+            background: #00e0ff;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0, 224, 255, 0.28);
+        }
+
+        @media (max-width: 768px) {
+
+            .competence-table th,
+            .competence-table td {
+                font-size: 0.88rem;
+                padding: 10px 10px;
+            }
+
+            .col-competence,
+            .col-subskills,
+            .col-preuves {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Detail de la realisation</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a id="backToSource" href="index.html#preuves">Retour</a>
+        </nav>
+    </header>
+
+    <main class="container details-wrapper">
+        <h2 id="realisationTitle" class="animated-title">Realisation</h2>
+
+        <section class="highlight-panel">
+            <p>Le tableau ci-dessous met en evidence les competences associees a cette realisation ainsi que les preuves
+                correspondantes.</p>
+        </section>
+
+
+        <section>
+            <h3 style="margin-bottom: 10px;">Tableau des competences</h3>
+            <div style="overflow-x: auto;">
+                <table class="competence-table">
+                    <thead>
+                        <tr>
+                            <th class="col-competence">Competence</th>
+                            <th class="col-subskills">Sous-competences</th>
+                            <th class="col-preuves">📸 Preuves</th>
+                        </tr>
+                    </thead>
+                    <tbody id="competenceTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="back-link-wrap">
+            <a id="backButton" class="back-link" href="index.html#preuves">Retour a la page precedente</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            /* ── Particules ── */
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = 'float-up ' + particle.style.animationDuration + ' linear infinite';
+                particlesContainer.appendChild(particle);
+            }
+
+            /* ── Données ── */
+            const defaultTarget = 'index.html#preuves';
+            let detailData = null;
+            try {
+                detailData = JSON.parse(sessionStorage.getItem('competenceDetailData') || 'null');
+            } catch (error) {
+                detailData = null;
+            }
+
+            const realisationTitle = document.getElementById('realisationTitle');
+            const tableBody = document.getElementById('competenceTableBody');
+            const backNav = document.getElementById('backToSource');
+            const backButton = document.getElementById('backButton');
+
+            if (!detailData || !detailData.realisation) {
+                realisationTitle.textContent = 'Aucune realisation selectionnee';
+                tableBody.innerHTML = '<tr class="highlighted"><td colspan="3">Ouvre cette page depuis un encadre competences pour voir le detail.</td></tr>';
+                backNav.href = defaultTarget;
+                backButton.href = defaultTarget;
+                return;
+            }
+
+            /* ── Navigation ── */
+            const backHref = detailData.sourcePage || defaultTarget;
+            realisationTitle.textContent = detailData.realisation;
+            backNav.href = backHref;
+            backButton.href = backHref;
+
+            /* ── Mapping outil → icône ── */
+            const toolIconMap = {
+                'jira': 'jira.svg',
+                'bitbucket': 'bitbucket.svg',
+                'vscode': 'vscode.png',
+                'vs code': 'vscode.png',
+                'vs_code': 'vscode.png',
+                'docker': 'docker.png',
+                'git': 'git.png',
+                'cerberus': 'cerberus.png',
+                'postman': 'postman.png',
+                'cursor': 'cursor.png',
+                'symfony': 'symfony.PNG',
+                'gmail': 'gmail.png',
+                'feedly': 'feedly.png',
+                'serveur kebab': 'ServeurKebab.png',
+                'phpmyadmin': 'phpmyadmin.png',
+                'looping': 'Looping.svg',
+                'trello': 'Trello.svg'
+            };
+
+            function buildToolsBadges(toolsList) {
+                if (!Array.isArray(toolsList) || toolsList.length === 0) return '';
+                const badges = toolsList.map(function (tool) {
+                    const key = tool.toLowerCase().trim();
+                    const icon = toolIconMap[key] || null;
+                    const iconHtml = icon
+                        ? '<img src="' + icon + '" alt="' + tool + '" title="' + tool + '" style="width:18px;height:18px;object-fit:contain;flex-shrink:0;">'
+                        : '';
+                    return '<span style="display:inline-flex;align-items:center;gap:4px;background:rgba(0,224,255,0.08);border:1px solid rgba(0,224,255,0.2);border-radius:5px;padding:3px 7px;font-size:0.78rem;color:#b6eaff;">' +
+                        iconHtml +
+                        '<span>' + tool + '</span>' +
+                        '</span>';
+                }).join('');
+                return '<div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;padding-top:8px;border-top:1px solid rgba(0,224,255,0.12);">' +
+                    badges +
+                    '</div>';
+            }
+
+            /* ── Compétences ── */
+            const rows = Array.isArray(detailData.competences) ? detailData.competences : [];
+
+            const globalImages = Array.isArray(detailData.images)
+                ? detailData.images.filter(function (s) { return typeof s === 'string' && s.trim() !== ''; })
+                : [];
+
+            function getImagesForRow(row, rowIndex, totalRows) {
+                if (Array.isArray(row.images) && row.images.length > 0) {
+                    return row.images.filter(function (s) { return typeof s === 'string' && s.trim() !== ''; });
+                }
+                if (globalImages.length === 0) return [];
+                const chunkSize = Math.ceil(globalImages.length / totalRows);
+                const start = rowIndex * chunkSize;
+                return globalImages.slice(start, start + chunkSize);
+            }
+
+            /* ── Construction du tableau ── */
+            if (rows.length === 0) {
+                tableBody.innerHTML = '<tr class="highlighted"><td colspan="3">Aucune competence detectee pour cette section.</td></tr>';
+            } else {
+                tableBody.innerHTML = rows.map(function (row, idx) {
+                    const subskillsHtml = Array.isArray(row.subskills) && row.subskills.length > 0
+                        ? '<ul style="margin:0 0 0 16px;padding:0;list-style:disc;">' +
+                        row.subskills.map(function (s) { return '<li style="margin-bottom:4px;">' + s + '</li>'; }).join('') +
+                        '</ul>'
+                        : '<span style="color:#7ba8c0;font-style:italic;">Non precise</span>';
+
+                    const imgs = getImagesForRow(row, idx, rows.length);
+                    let preuveHtml;
+                    if (imgs.length === 0) {
+                        preuveHtml = '<span class="no-proof">Aucune preuve disponible</span>';
+                    } else {
+                        preuveHtml = '<div class="cell-proof-grid">' +
+                            imgs.map(function (src, i) {
+                                return '<div class="cell-proof-thumb" data-src="' + src + '">' +
+                                    '<img src="' + src + '" alt="Preuve ' + (i + 1) + '" loading="lazy">' +
+                                    '<span class="zoom-icon">🔍</span>' +
+                                    '</div>';
+                            }).join('') +
+                            '</div>';
+                    }
+
+                    /* Outils sous les screens */
+                    preuveHtml += buildToolsBadges(row.tools);
+
+                    return '<tr class="highlighted">' +
+                        '<td class="col-competence"><strong>' + row.title + '</strong></td>' +
+                        '<td class="col-subskills">' + subskillsHtml + '</td>' +
+                        '<td class="col-preuves">' + preuveHtml + '</td>' +
+                        '</tr>';
+                }).join('');
+            }
+
+            /* ── Lightbox ── */
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightboxImg.classList.remove('zoomed');
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            const closeLightbox = function () {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.transformOrigin = 'center center';
+                document.body.style.overflow = 'auto';
+            };
+
+            /* Délégation d'événement sur le tbody (les thumbs sont créés dynamiquement) */
+            tableBody.addEventListener('click', function (e) {
+                const thumb = e.target.closest('.cell-proof-thumb');
+                if (thumb) {
+                    openLightbox(thumb.dataset.src);
+                }
+            });
+
+            lightboxImg.addEventListener('click', function (e) {
+                e.stopPropagation();
+                lightboxImg.classList.toggle('zoomed');
+                if (!lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.style.transformOrigin = 'center center';
+                }
+            });
+
+            lightboxImg.addEventListener('mousemove', function (e) {
+                if (lightboxImg.classList.contains('zoomed')) {
+                    const x = (e.offsetX / lightboxImg.offsetWidth) * 100;
+                    const y = (e.offsetY / lightboxImg.offsetHeight) * 100;
+                    lightboxImg.style.transformOrigin = x + '% ' + y + '%';
+                }
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

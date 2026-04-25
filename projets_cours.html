@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets en Cours - Lohan Poulain</title>
+    <meta name="description" content="Mes projets académiques en BTS SIO SLAM">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <style>
+        .competence-block {
+            background: rgba(0, 224, 255, 0.07);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 10px 18px 10px 18px;
+            box-shadow: 0 2px 8px rgba(0, 224, 255, 0.04);
+        }
+
+        .competence-title {
+            font-weight: 700;
+            color: #00e0ff;
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .subskills-list {
+            margin: 0 0 0 18px;
+            padding: 0 0 0 12px;
+            color: #b6eaff;
+            font-size: 0.98rem;
+        }
+
+        .subskills-list li {
+            margin-bottom: 2px;
+        }
+    </style>
+    <style>
+        .competence-card-link {
+            cursor: pointer;
+            border: 1px solid rgba(0, 224, 255, 0.15);
+            border-radius: 10px;
+            padding: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .competence-card-link:hover,
+        .competence-card-link:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 224, 255, 0.14);
+            border-color: rgba(0, 224, 255, 0.35);
+            outline: none;
+        }
+
+        .competence-card-link::after {
+            content: 'Cliquer pour ouvrir les preuves et le tableau detaille';
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.86rem;
+            color: #d8f6ff;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 224, 255, 0.14);
+        }
+
+        .competence-return-focus {
+            box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.6), 0 10px 24px rgba(0, 224, 255, 0.25);
+            border-color: rgba(0, 224, 255, 0.65) !important;
+            transition: box-shadow 0.35s ease;
+        }
+    </style>
+    <style>
+        .container {
+            max-width: 1200px !important;
+            width: 96vw !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1300px) {
+            .container {
+                max-width: 98vw !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 0 2vw;
+            }
+        }
+
+        /* ── Formatage des images Preuves ── */
+        .proof-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proof-image img {
+            max-width: 100%;
+            max-height: 280px;
+            width: auto;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            display: block;
+        }
+
+        .proof-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 224, 255, 0.25);
+        }
+    </style>
+    <!-- Prism.js pour coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+</head>
+
+<body>
+    <nav class="floating-menu">
+        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
+        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
+        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
+        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
+    </nav>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h1 class="animated-title">Projets en Cours</h1>
+        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
+            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
+            <a href="stage_1.html">🏢 Stage 1ère Année</a>
+            <a href="stage_2.html">🏢 Stage 2ème Année</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2 class="animated-title" style="margin-top: 50px;">🎓 Réalisation en cours de formation</h2>
+
+        <!-- Section Outils Utilisés -->
+        <section class="tools-used"
+            style="margin: 18px 0 12px 0; background: rgba(20,22,34,0.07); border-radius: 8px; padding: 8px 16px;">
+            <strong style="display:block; margin-bottom:6px;">Outils utilisés :</strong>
+            <ul style="display: block; list-style: none; margin: 0; padding: 0;">
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="vscode.png" alt="VS Code" style="width:32px;height:32px;object-fit:contain;">
+                    <span style="font-weight:600;">VS Code</span>
+                    <span style="color:#888;">Éditeur de code</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="phpmyadmin.png" alt="phpMyAdmin" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">phpMyAdmin</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Interface web de gestion de bases de données MySQL</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="Looping.svg" alt="Looping" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Looping</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Logiciel conçu pour la modélisation conceptuelle de données qui
+                        permet de générer automatiquement des scripts SQL.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+                        <img src="Trello.svg" alt="Trello" style="width:32px;height:32px;object-fit:contain;">
+                        <span style="font-weight:600;">Trello</span>
+                    </span>
+                    <span style="color:#888; flex:1;">Outil en ligne permettant de gérer des projet et des tâches
+                        personnelles</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <!--1ere preuve-->
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>AP 1 : Projet GreenIT personnalisé</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en oeuvre
+                    </h5>
+                    <div class="competence-block"
+                        data-images="AP1_1.PNG, AP1_2.PNG, AP1_5.PNG, AP1_11.PNG, AP1_3.PNG, AP1_4.PNG | AP1_6.PNG, AP1_7.PNG, AP1_8.PNG, AP1_9.PNG"
+                        data-tools="phpmyadmin, Looping | VS code">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Mettre en place et vérifier les niveaux d'habilitation associés à un service</li>
+                            <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block" data-images="AP1_13.PNG | AP1_14.PNG" data-tools="| Trello">
+                        <div class="competence-title">Travailler en mode projet</div>
+                        <ul class="subskills-list">
+                            <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
+                            <li>Planifier les activités</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Pour notre premier projet en Atelier de professionnalisation, on a été chargé de choisir notre
+                        projet en groupe.
+                        Notre groupe a donc décidé de se penché sur le thème du GreenIT et de la réduction de
+                        l'empreinte carbone numérique. </p>
+                </div>
+            </div>
+
+
+
+            <div style="width: 100%;">
+                <h5
+                    style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                    📸 Preuves
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="proof-image">
+                        <img src="AP1_1.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_2.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_5.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_11.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_3.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_4.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_6.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_7.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_8.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_9.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_13.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                    <div class="proof-image">
+                        <img src="AP1_14.PNG" alt="">
+                        <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--2ème preuves
+
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>AP 2 : Projet CashCash</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en oeuvre
+                    </h5>
+                    <div class="competence-block">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Collecter, suivre et orienter des demandes</li>
+                            <li>Traiter des demandes concernant les services réseau, système ou applicatifs</li>
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Déployer un service</li>
+                            <li>Réaliser les tests d'intégration et d'acceptation</li>
+                            <li>Accompagner les utilisateurs dans la mise en place d'un service</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Durant ma deuxième année de BTS SLAM, nous avons été imposé de faire un projet sur l'entreprise
+                        "CashCash".
+                        Celle-ci revend des TPV pour la grande distribution, elle possède 57 agences sur le territoire
+                        national pour
+                        suivre les contrats de maintenance et coordonner les interventions de ses techniciens.
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    -->
+
+        <!--3ème preuves
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Traitement de tickets GLPI</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en oeuvre
+                    </h5>
+                    <div class="competence-block">
+                        <div class="competence-title">Gérer le patrimoine informatique</div>
+                        <ul class="subskills-list">
+                            <li>Recenser et identifier les ressources numériques</li>
+                            <li>Exploiter des référentiels, normes et standards</li>
+                            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Répondre aux incidents et aux demandes d'assistance et d'évolution
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Collecter, suivre et orienter des demandes</li>
+                            <li>Traiter des demandes concernant les services réseau, système ou applicatifs</li>
+                            <li>Traiter des demandes concernant les applications</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Déployer un service</li>
+                            <li>Réaliser les tests d'intégration et d'acceptation</li>
+                            <li>Accompagner les utilisateurs dans la mise en place d'un service</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Durant mes deux ans de formation en BTS SLAM, j'ai dû faire un portfolio contenant notamment une
+                        veille technologie, des preuves de mes différents stages
+                        ainsi que de mes Ateliers professionnels. Ceci m'a permit de débloquer de nouvelles compétences.
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    -->
+        <!--4ème preuves
+        <div class="proof-item" style="flex-direction: column; align-items: stretch;">
+            <div class="proof-content" style="width: 100%; margin-bottom: 20px;">
+                <h4>Conception, développement et déploiement d'un portfolio numérique professionnel</h4>
+                <div style="margin-top: 20px;">
+                    <h5
+                        style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                        🛠️ Compétences & sous-compétences mises en oeuvre
+                    </h5>
+                    <div class="competence-block">
+                        <div class="competence-title">Développer la présence en ligne de l'organisation</div>
+                        <ul class="subskills-list">
+                            <li>Participer à la valorisation de l'image de l'organisation sur les médias numériques en
+                                tenant compte du cadre juridique et des enjeux économiques</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Mettre à disposition des utilisateurs un service informatique
+                        </div>
+                        <ul class="subskills-list">
+                            <li>Déployer un service</li>
+                        </ul>
+                    </div>
+                    <div class="competence-block">
+                        <div class="competence-title">Organiser son développement professionnel</div>
+                        <ul class="subskills-list">
+                            <li>Mettre en oeuvre des outils des outils et stratégies de veille informationnelle</li>
+                            <li>Gérer son identité professionnelle</li>
+                        </ul>
+                    </div>
+                    <p
+                        style="margin: 8px 0 0 5px; color: #ddd; font-style: italic; font-size: 0.95rem; border-left: 2px solid #00e0ff; padding-left: 10px;">
+                        Durant mes deux ans de formation en BTS SLAM, j'ai dû faire un portfolio contenant notamment une
+                        veille technologie, des preuves de mes différents stages
+                        ainsi que de mes Ateliers professionnels. Ceci m'a permit de débloquer de nouvelles compétences.
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    -->
+
+
+    </main>
+
+    <footer>
+        <p>© 2026 Lohan Poulain - BTS SIO SLAM</p>
+    </footer>
+
+
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Zoom">
+
+        <div style="width: 100%;">
+            <h5
+                style="color: #00e0ff; font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(0,224,255,0.3); padding-bottom: 5px; display: inline-block;">
+                📸 Preuves
+            </h5>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="proof-image">
+                    <img src="fichier1.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+                <div class="proof-image">
+                    <img src="fichier2.jpg" alt="">
+                    <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px;">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 20) + 's';
+                particle.style.animation = `float-up ${particle.style.animationDuration} linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close-btn');
+
+            const proofImages = document.querySelectorAll('.proof-image img');
+
+            proofImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.classList.remove('zoomed');
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.classList.toggle('zoomed');
+                if (!lightboxImg.classList.contains('zoomed')) {
+                    lightboxImg.style.transformOrigin = 'center center';
+                }
+            });
+
+
+            lightboxImg.addEventListener('mousemove', (e) => {
+                if (lightboxImg.classList.contains('zoomed')) {
+                    const x = (e.offsetX / lightboxImg.offsetWidth) * 100;
+                    const y = (e.offsetY / lightboxImg.offsetHeight) * 100;
+                    lightboxImg.style.transformOrigin = `${x}% ${y}%`;
+                }
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.transformOrigin = 'center center';
+                document.body.style.overflow = 'auto';
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
+            const sourcePage = window.location.pathname.split('/').pop() || 'projets_cours.html';
+            const interactiveContents = document.querySelectorAll('.proof-item .proof-content');
+            const contentsArray = Array.from(interactiveContents);
+
+            const currentHash = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+
+            const buildPayload = (content) => {
+                const realisation = content.querySelector('h4')?.textContent.trim() || 'Realisation';
+
+                /*
+                 * Pour associer des images à une compétence précise, ajoutez l'attribut
+                 * data-images="fichier1.jpg,fichier2.jpg" sur le div.competence-block.
+                 *
+                 * Pour lister les outils utilisés pour cette réalisation, ajoutez l'attribut
+                 * data-tools="Jira,Git,VS Code" sur le div.proof-content.
+                 */
+                let competences = [];
+                Array.from(content.querySelectorAll('.competence-block')).forEach((block) => {
+                    const title = block.querySelector('.competence-title')?.textContent.trim() || 'Competence';
+                    const subskills = Array.from(block.querySelectorAll('li')).map((item) => item.textContent.trim()).filter(Boolean);
+
+                    const rawImages = block.getAttribute('data-images') || '';
+                    const rawTools = block.getAttribute('data-tools') || '';
+
+                    if (subskills.length > 1) {
+                        const hasImageGroups = rawImages.includes('|');
+                        const imageGroups = hasImageGroups ? rawImages.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        const defaultImages = !hasImageGroups ? rawImages.split(',').map(s => s.trim()).filter(Boolean) : [];
+                        const chunkImgSize = defaultImages.length > 0 ? Math.ceil(defaultImages.length / subskills.length) : 0;
+
+                        const hasToolGroups = rawTools.includes('|');
+                        const toolGroups = hasToolGroups ? rawTools.split('|').map(g => g.split(',').map(s => s.trim()).filter(Boolean)) : [];
+                        // Par defaut, on assigne tous les outils a chaque sous-competence s'il n'y a pas de separateur |
+                        const defaultTools = !hasToolGroups ? rawTools.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+                        subskills.forEach((subskill, i) => {
+                            const subImages = hasImageGroups ? (imageGroups[i] || []) : defaultImages.slice(i * chunkImgSize, (i + 1) * chunkImgSize);
+                            const subTools = hasToolGroups ? (toolGroups[i] || []) : defaultTools;
+                            competences.push({ title, subskills: [subskill], images: subImages, tools: subTools });
+                        });
+                    } else {
+                        const images = rawImages.split(',').map(s => s.trim()).filter(Boolean);
+                        const tools = rawTools.split(',').map(s => s.trim()).filter(Boolean);
+                        competences.push({ title, subskills, images, tools });
+                    }
+                });
+
+                const sourceWithAnchor = sourcePage + '#' + encodeURIComponent(content.id);
+
+                const payload = {
+                    sourcePage: sourceWithAnchor,
+                    realisation,
+                    competences
+                };
+
+                return payload;
+            };
+
+            const openDetailPage = (content) => {
+                const payload = buildPayload(content);
+                sessionStorage.setItem('competenceDetailData', JSON.stringify(payload));
+                window.location.href = 'competence_details.html';
+            };
+
+            interactiveContents.forEach((content, index) => {
+                const parentProof = content.closest('.proof-item');
+                if (!parentProof) {
+                    return;
+                }
+
+                if (!content.id) {
+                    content.id = 'competence-projets-' + (index + 1);
+                }
+
+                content.classList.add('competence-card-link');
+                content.setAttribute('role', 'button');
+                content.setAttribute('tabindex', '0');
+
+                if (currentHash && content.id === currentHash) {
+                    setTimeout(() => {
+                        content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        content.classList.add('competence-return-focus');
+                        setTimeout(() => content.classList.remove('competence-return-focus'), 2200);
+                    }, 80);
+                }
+
+                content.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button, input, select, textarea, label')) {
+                        return;
+                    }
+                    openDetailPage(content);
+                });
+
+                content.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openDetailPage(content);
+                    }
+                });
+            });
+
+            /* ── Masquage et bascule des Preuves ── */
+            const preuveHeaders = document.querySelectorAll('h5');
+            preuveHeaders.forEach(h5 => {
+                if (h5.textContent.includes('📸 Preuves')) {
+                    const container = h5.parentElement;
+                    const grid = container.querySelector('div[style*="display: grid"]');
+
+                    if (grid) {
+                        grid.style.display = 'none'; // Masqué par défaut
+
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Afficher les screens';
+                        btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
+
+                        btn.onmouseover = () => {
+                            btn.style.background = '#00e0ff';
+                            btn.style.color = '#001a2d';
+                        };
+                        btn.onmouseout = () => {
+                            if (grid.style.display === 'none') {
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                            } else {
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            }
+                        };
+
+                        btn.onclick = (e) => {
+                            e.stopPropagation(); // Éviter de cliquer sur la carte mère
+                            if (grid.style.display === 'none') {
+                                grid.style.display = 'grid';
+                                btn.textContent = 'Masquer les screens';
+                                btn.style.background = 'rgba(255, 107, 53, 0.15)';
+                                btn.style.color = '#ff6b35';
+                                btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
+                            } else {
+                                grid.style.display = 'none';
+                                btn.textContent = 'Afficher les screens';
+                                btn.style.background = 'rgba(0, 224, 255, 0.15)';
+                                btn.style.color = '#00e0ff';
+                                btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
+                            }
+                        };
+
+                        // Ajouter le bouton à côté du titre H5
+                        h5.appendChild(btn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
