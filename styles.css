@@ -11,6 +11,78 @@ body {
     color: #fff;
 }
 
+/* Navigation principale (recruteur)
+   - statique (pas sticky) : visible en haut de page, ne suit pas le scroll */
+.top-nav {
+    position: static;
+    z-index: 1500;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    margin: 12px auto 0;
+    width: min(1100px, 96vw);
+    background: rgba(20, 22, 34, 0.78);
+    border: 1px solid rgba(0, 224, 255, 0.25);
+    border-radius: 14px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(8px);
+}
+
+/* Container large (utile pour afficher des cartes en grille) */
+.container--wide {
+    max-width: 1100px;
+    padding: 38px 70px;
+}
+
+@media (max-width: 900px) {
+    .container--wide {
+        padding: 26px 18px;
+    }
+}
+
+.top-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(42, 42, 86, 0.55);
+    border: 1px solid rgba(0, 224, 255, 0.18);
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.top-nav a:hover {
+    transform: translateY(-1px);
+    background: rgba(0, 224, 255, 0.16);
+    border-color: rgba(0, 224, 255, 0.35);
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+}
+
+/* Ordre des sections (flow recruteur) */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#tableau { order: 1; }
+#documentation { order: 2; }
+#competences { order: 3; }
+#veille { order: 4; }
+#contact { order: 5; }
+
+#accueil,
+#tableau,
+#documentation,
+#competences,
+#veille,
+#contact,
+#preuves {
+    scroll-margin-top: 110px;
+}
+
 /* Infos latérales dynamiques */
 .side-info {
     position: fixed;
@@ -73,7 +145,6 @@ body {
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
         gap: 15px;
     }
 
@@ -126,16 +197,22 @@ body {
         letter-spacing: 1px !important;
     }
 
+    /* Nav: reste alignée sur UNE ligne + scroll si besoin */
     .section-nav {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 6px;
     }
 
     .section-nav a {
-        width: 80%;
-        max-width: 200px;
-        text-align: center;
-        margin: 5px 0;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        flex: 0 0 auto;
     }
 
     .cta-buttons {
@@ -199,7 +276,33 @@ header h1 {
     gap: 15px;
     margin-bottom: 25px;
     margin-top: 20px;
-    flex-wrap: wrap;
+
+    /* Toujours sur une seule ligne (si pas assez de place, scroll horizontal) */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 6px;
+}
+
+.section-nav::-webkit-scrollbar {
+    height: 8px;
+}
+
+.section-nav::-webkit-scrollbar-thumb {
+    background: rgba(0, 224, 255, 0.25);
+    border-radius: 999px;
+}
+
+.section-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+}
+
+/* Nav placée en haut d'une section (comme ton screen) */
+.section-nav--in-section {
+    margin-top: 0;
 }
 
 .section-nav a {
@@ -214,6 +317,10 @@ header h1 {
     position: relative;
     display: inline-block;
     border: 1px solid rgba(0, 224, 255, 0.2);
+
+    /* Empêche le texte de casser dans les boutons */
+    white-space: nowrap;
+    flex: 0 0 auto;
 }
 
 
@@ -244,6 +351,18 @@ header h1 {
     padding: 40px 130px;
     color: #fff;
     transition: box-shadow 0.3s;
+}
+
+/* Variante large (pour afficher correctement la grille en cartes) */
+.container.container--wide {
+    max-width: 1100px;
+    padding: 40px 70px;
+}
+
+@media (max-width: 900px) {
+    .container.container--wide {
+        padding: 26px 18px;
+    }
 }
 
 .hero-section {
@@ -345,6 +464,20 @@ h6 {
 .hero-section p {
     font-size: 1.2rem;
     margin: 20px 0;
+}
+
+.hero-section .hero-headline {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 14px 0 8px;
+    color: #dff9ff;
+}
+
+.hero-section .hero-subheadline {
+    font-size: 1.05rem;
+    margin: 0 auto 18px;
+    max-width: 54ch;
+    color: rgba(223, 249, 255, 0.88);
 }
 
 /* Responsive boutons accueil */
@@ -1199,10 +1332,18 @@ h5 {
 /* Styles pour la section compétences simplifiée */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* 2 colonnes comme sur ton screen (desktop / tablette) */
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 30px;
     padding: 0 10px;
+}
+
+/* Passe en 1 colonne uniquement sur petit mobile */
+@media (max-width: 680px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .skill-category {
@@ -1970,10 +2111,6 @@ header h1 {
 
 /* Amélioration du responsive */
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
     .veille-tools {
         grid-template-columns: 1fr;
     }
@@ -2006,6 +2143,7 @@ header h1 {
     padding-top: 30px;
     border-top: 1px solid rgba(0, 224, 255, 0.2);
 }
+
 
 .proofs-section h3 {
     text-align: center;
@@ -2307,41 +2445,33 @@ code {
 /* Correction Responsive Mobile - Ligne Unique Forcée */
 @media (max-width: 768px) {
 
-    /* Navigation forcée sur UNE SEULE ligne de gauche à droite */
+    /* Navigation sur une seule ligne (scroll horizontal si besoin) */
     .section-nav {
         display: flex;
         flex-direction: row !important;
-        /* Force la direction ligne */
         flex-wrap: nowrap !important;
-        /* INTERDIT le retour à la ligne */
-        justify-content: space-between;
-        /* Répartit l'espace disponible */
+        justify-content: flex-start;
         width: 100%;
-        padding: 0 2px;
-        overflow-x: hidden;
-        /* Pas de scroll si possible, sinon auto */
-        gap: 2px;
+        padding: 0 6px 6px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        gap: 6px;
         white-space: nowrap;
     }
 
     .section-nav::-webkit-scrollbar {
-        height: 0;
+        height: 6px;
     }
 
     .section-nav a {
-        flex: 1 1 auto;
-        /* Extensible équitablement */
-        padding: 8px 1px;
-        /* Marges réduites au minimum */
-        font-size: 0.65rem;
-        /* Texte réduit pour tout faire rentrer */
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        font-size: 0.75rem;
         margin: 0;
-        min-width: 0;
-        /* Permet de rétrécir en dessous du contenu si besoin */
+        min-width: auto;
         text-align: center;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
     }
 
     /* Permettre aux blocs SLAM/SISR de s'empiler normalement */

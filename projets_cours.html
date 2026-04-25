@@ -37,29 +37,49 @@
     <style>
         .competence-card-link {
             cursor: pointer;
+            position: relative;
             border: 1px solid rgba(0, 224, 255, 0.15);
-            border-radius: 10px;
-            padding: 8px;
+            border-radius: 12px;
+            padding: 12px 12px 46px;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            background: rgba(20, 22, 34, 0.28);
         }
 
         .competence-card-link:hover,
         .competence-card-link:focus {
             transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(0, 224, 255, 0.14);
-            border-color: rgba(0, 224, 255, 0.35);
+            box-shadow: 0 10px 26px rgba(0, 224, 255, 0.14);
+            border-color: rgba(0, 224, 255, 0.42);
             outline: none;
         }
 
         .competence-card-link::after {
-            content: 'Cliquer pour ouvrir les preuves et le tableau detaille';
-            display: inline-block;
-            margin-top: 10px;
+            content: '';
+            display: none;
+        }
+
+        .competence-card-link .card-cta {
+            position: absolute;
+            right: 12px;
+            bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.86rem;
-            color: #d8f6ff;
-            padding: 4px 10px;
+            font-weight: 800;
+            color: #dff9ff;
+            padding: 7px 12px;
             border-radius: 999px;
-            background: rgba(0, 224, 255, 0.14);
+            background: rgba(0, 224, 255, 0.16);
+            border: 1px solid rgba(0, 224, 255, 0.28);
+            user-select: none;
+        }
+
+        .competence-card-link:hover .card-cta,
+        .competence-card-link:focus .card-cta {
+            background: #00e0ff;
+            color: #001a2d;
+            border-color: rgba(0, 224, 255, 0.65);
         }
 
         .competence-return-focus {
@@ -120,12 +140,6 @@
 </head>
 
 <body>
-    <nav class="floating-menu">
-        <a href="index.html#preuves" data-tooltip="Retour Portfolio">🏠</a>
-        <a href="projets_cours.html" data-tooltip="Projets en Cours">🎓</a>
-        <a href="stage_1.html" data-tooltip="Stage 1ère Année">🏢<sup>1</sup></a>
-        <a href="stage_2.html" data-tooltip="Stage 2ème Année">🏢<sup>2</sup></a>
-    </nav>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
@@ -133,12 +147,18 @@
 
     <header>
         <h1 class="animated-title">Projets en Cours</h1>
-        <nav class="section-nav" style="justify-content: center; margin-top: 20px;">
-            <a href="index.html#preuves">⬅️ Retour au Portfolio</a>
-            <a href="stage_1.html">🏢 Stage 1ère Année</a>
-            <a href="stage_2.html">🏢 Stage 2ème Année</a>
-        </nav>
     </header>
+
+    <nav class="top-nav" aria-label="Navigation">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#preuves">Réalisations</a>
+        <a href="index.html#documentation">Expérience</a>
+        <a href="index.html#competences">Compétences</a>
+        <a href="projets_cours.html" aria-current="page">Projets</a>
+        <a href="stage_1.html">Stage 1</a>
+        <a href="stage_2.html">Stage 2</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
 
     <main class="container">
 
@@ -609,6 +629,13 @@
                 content.setAttribute('role', 'button');
                 content.setAttribute('tabindex', '0');
 
+                if (!content.querySelector('.card-cta')) {
+                    const cta = document.createElement('div');
+                    cta.className = 'card-cta';
+                    cta.textContent = 'Voir les preuves →';
+                    content.appendChild(cta);
+                }
+
                 if (currentHash && content.id === currentHash) {
                     setTimeout(() => {
                         content.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -643,7 +670,7 @@
                         grid.style.display = 'none'; // Masqué par défaut
 
                         const btn = document.createElement('button');
-                        btn.textContent = 'Afficher les screens';
+                        btn.textContent = 'Voir les captures';
                         btn.style.cssText = 'margin-left: 15px; cursor: pointer; padding: 5px 14px; background: rgba(0, 224, 255, 0.15); color: #00e0ff; font-weight: 600; border-radius: 6px; border: 1px solid rgba(0, 224, 255, 0.3); font-size: 0.85rem; transform: translateY(-2px); transition: all 0.2s ease;';
 
                         btn.onmouseover = () => {
@@ -665,13 +692,13 @@
                             e.stopPropagation(); // Éviter de cliquer sur la carte mère
                             if (grid.style.display === 'none') {
                                 grid.style.display = 'grid';
-                                btn.textContent = 'Masquer les screens';
+                                btn.textContent = 'Masquer les captures';
                                 btn.style.background = 'rgba(255, 107, 53, 0.15)';
                                 btn.style.color = '#ff6b35';
                                 btn.style.borderColor = 'rgba(255, 107, 53, 0.3)';
                             } else {
                                 grid.style.display = 'none';
-                                btn.textContent = 'Afficher les screens';
+                                btn.textContent = 'Voir les captures';
                                 btn.style.background = 'rgba(0, 224, 255, 0.15)';
                                 btn.style.color = '#00e0ff';
                                 btn.style.borderColor = 'rgba(0, 224, 255, 0.3)';
