@@ -266,14 +266,14 @@
             <h4>📄 Curriculum Vitae</h4>
             <p>Consultez mon CV complet avec mon parcours, mes compétences et mes expériences.</p>
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 15px 0;">
-                <a href="CV_Lohan.pdf" target="_blank"
+                <a href="CV_Lohan_Poulain.pdf" target="_blank"
                     style="flex: 1; min-width: 200px; max-width: 250px; padding: 15px 20px; background: linear-gradient(135deg, #4CAF50, #2E7D32); color: #fff; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);"
                     onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(76, 175, 80, 0.4)'"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(76, 175, 80, 0.2)'">
                     <span style="margin-right: 8px; font-size: 1.2rem;">👁️</span>
                     Consulter mon CV
                 </a>
-                <a href="CV_Lohan.pdf" download="CV_Lohan_Poulain.pdf"
+                <a href="CV_Lohan_Poulain.pdf" download="CV_Lohan_Poulain.pdf"
                     style="flex: 1; min-width: 200px; max-width: 250px; padding: 15px 20px; background: linear-gradient(135deg, #00e0ff, #003366); color: #fff; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 224, 255, 0.2);"
                     onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0, 224, 255, 0.4)'"
                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 224, 255, 0.2)'">
@@ -676,7 +676,7 @@
             try {
 
                 const downloadLink = document.createElement('a');
-                downloadLink.href = 'CV_Lohan.pdf';
+                downloadLink.href = 'CV_Lohan_Poulain.pdf';
                 downloadLink.download = 'CV_Lohan_Poulain.pdf';
                 downloadLink.style.display = 'none';
 
@@ -701,7 +701,7 @@
             } catch (error) {
                 console.error('Erreur de téléchargement:', error);
 
-                window.open('CV_Lohan.pdf', '_blank');
+                window.open('CV_Lohan_Poulain.pdf', '_blank');
             }
         }
 
